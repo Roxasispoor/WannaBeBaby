@@ -9,6 +9,7 @@ public class Skill : MonoBehaviour {
     public string triggerName;
     public GameObject prefabToInstanciate;
     public float spawnRange;
+    public float timeAnimation;
     public AudioClip skillSound;
 
     public void Use(Character character)
@@ -17,9 +18,16 @@ public class Skill : MonoBehaviour {
             character.transform.position.y + spawnRange * character.AimDirection.y), Quaternion.identity);
         attack.GetComponent<Attack>().direction = character.AimDirection;
         attack.GetComponent<Attack>().character = gameObject.GetComponent<Character>();
+        GetComponent<Animator>().SetBool(triggerName, true);
         if (GetComponent<AudioSource>()!=null)
         { 
         GetComponent<AudioSource>().PlayOneShot(skillSound);
         }
+        StartCoroutine(WaitAndStopAnimation());
+    }
+    private IEnumerator WaitAndStopAnimation()
+    {
+        yield return new WaitForSeconds(timeAnimation);
+        GetComponent<Animator>().SetBool(triggerName, false);
     }
 }

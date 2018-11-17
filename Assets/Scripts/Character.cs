@@ -139,6 +139,7 @@ public class Character : MonoBehaviour {
 
         //launch animator for change of sprite
         CurrentForm = Forms[id];
+        GetComponent<Animator>().runtimeAnimatorController = Forms[id].animatorController;
         currentForm.HurtBox.gameObject.SetActive(true);
     }
 }

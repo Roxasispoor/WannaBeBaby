@@ -46,6 +46,10 @@ public class SuitCaseAttack : Attack {
         }
         else
         {
+            if (collision.GetComponent<AudioSource>() != null)
+            {
+                GetComponent<AudioSource>().PlayOneShot(hittingSound);
+            }
             collision.gameObject.GetComponent<Character>().TakeDamage(damage);
             character.TakeDamage(-damage);
             Destroy(gameObject);
