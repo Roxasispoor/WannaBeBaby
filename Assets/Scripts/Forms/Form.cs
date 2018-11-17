@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Form : MonoBehaviour {
+public class Form : MonoBehaviour {
+    public string label;
     [SerializeField]
     private List<Skill> skills;
     private SpriteRenderer spriteRenderer;
+    [SerializeField]
     private Animator animator;
     [SerializeField]
     private Collider2D hurtBox;
-    private float moveSpeed;
+    public float moveSpeed;
     public void UseSkill(int i,Character character)
     {
         if(i>=0 && i<skills.Count &&  Time.fixedTime - skills[i].lastTimedUsed > skills[i].cooldown)
@@ -27,8 +29,8 @@ public abstract class Form : MonoBehaviour {
         }
     }
     
-    void Start () {
-		
+    void Awake () {
+        this.name = name;
 	}
 
     
@@ -60,5 +62,8 @@ public abstract class Form : MonoBehaviour {
     }
 
     // Update is called once per frame
-   
+    private void Update()
+    {
+        animator.SetFloat("Speed", moveSpeed);
+    }
 }
