@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4680660257782540}
   - component: {fileID: 212318439542483574}
   - component: {fileID: 70659931774210030}
+  - component: {fileID: 114315970880841008}
   m_Layer: 0
   m_Name: batHitBox
   m_TagString: Untagged
@@ -56,6 +57,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.17835292, y: 0.6369516}
   m_Direction: 0
+--- !u!114 &114315970880841008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1132767391756806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdbef44cf781e1841a91e136de98bc5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  character: {fileID: 0}
+  direction: {x: 0, y: 0}
 --- !u!212 &212318439542483574
 SpriteRenderer:
   m_ObjectHideFlags: 1
