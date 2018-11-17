@@ -5,6 +5,7 @@ using UnityEngine;
 public class Stun : Attack
 {
     public float stunTime;
+    
     void Start()
     {
         Init();
@@ -18,15 +19,17 @@ public class Stun : Attack
         if (collision.tag != character.tag)
         {
 
-            StartCoroutine(LockForSeconds(collision.gameObject.GetComponent<Character>()));
+            collision.GetComponent<Character>().isLocked = true;
+            collision.GetComponent<Character>().timeEndLock = Time.fixedTime+stunTime;
+            collision.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+          
+        }
+        else
+        {
+            Debug.Log("auto hit!");
         }
     }
-    public IEnumerator LockForSeconds(Character character)
-    {
-        character.isLocked = true;
-        yield return new WaitForSeconds(stunTime);
-        character.isLocked = false ;
-    }
+
     // Update is called once per frame
     void Update()
     {

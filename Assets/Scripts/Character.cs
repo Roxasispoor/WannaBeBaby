@@ -15,9 +15,9 @@ public class Character : MonoBehaviour {
     private List<Form> forms;         // 0-> baby  1->Teen  2->Adult  3->Old  4->Lich
     [SerializeField]
     private Vector2 aimDirection;
-
+    public float timeEndLock;
     public float speed = 10;
-
+    public bool isInvincible=false;
 
     // Use this for initialization
     void Start()
@@ -82,6 +82,10 @@ public class Character : MonoBehaviour {
 
     void Update()
     {
+        if(Time.fixedTime>timeEndLock)
+        {
+            isLocked = false;
+        }
         if(!isLocked)
         { 
         Movement();
@@ -119,9 +123,11 @@ public class Character : MonoBehaviour {
 
     public void TakeDamage(int damage)
     {
-        
+        if(!isInvincible)
+        { 
         age += damage;
         CheckAndChangeForm();
+        }
     }
     public void CheckAndChangeForm()
     {
@@ -171,6 +177,10 @@ public class Character : MonoBehaviour {
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
+    }
+    public void Unlock()
+    {
+        isLocked = false;
     }
 
     public void UpdateAim()
