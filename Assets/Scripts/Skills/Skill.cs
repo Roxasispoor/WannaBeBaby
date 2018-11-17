@@ -10,6 +10,8 @@ public abstract class Skill : MonoBehaviour {
     public string triggerName;
 
     public abstract void Use(Character character);
+    
+
 	// Use this for initialization
 
 }
