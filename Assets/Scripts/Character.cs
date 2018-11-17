@@ -5,7 +5,6 @@ using UnityEngine;
 public class Character : MonoBehaviour {
 
     public Player player;
-    public GameObject gameObjectPlayer;
     [SerializeField]
     private int age;
 
@@ -22,7 +21,6 @@ public class Character : MonoBehaviour {
     {
         aimDirection = new Vector2(1, 0);
         currentForm = forms[2];
-        player = gameObjectPlayer.GetComponent<Player>();   
     }
 
     public int Age
@@ -89,6 +87,7 @@ public class Character : MonoBehaviour {
         {
             currentForm.UseSkill(0, this);
         }
+        Movement();
     }
     // Update is called once per frame
     void LateUpdate () {
@@ -147,6 +146,6 @@ public class Character : MonoBehaviour {
     public void Movement()
     {
         Vector2 movement = new Vector2(player.input.leftHorizontal, player.input.leftVertical);
-        GetComponent<Rigidbody2D>().velocity = movement.normalized;
+        GetComponent<Rigidbody2D>().velocity = movement.normalized * Time.deltaTime * speed;
     }
 }
