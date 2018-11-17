@@ -46,13 +46,14 @@ public class SuitCaseAttack : Attack {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("TriggerEnter");
         if (collision.tag == character.tag)
         {
             Destroy(gameObject);
         }
         else
         {
-            if (collision.GetComponent<AudioSource>() != null)
+            if (collision.GetComponent<AudioSource>() != null && hittingSound != null)
             {
                 GetComponent<AudioSource>().PlayOneShot(hittingSound);
             }
