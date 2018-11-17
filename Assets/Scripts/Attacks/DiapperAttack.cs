@@ -22,9 +22,9 @@ public class DiapperAttack : Attack {
     }
     public IEnumerator LockForSeconds(Character character)
     {
-        character.isLocked = true;
+        character.speed *= 0.5f;
         yield return new WaitForSeconds(lockTime);
-        character.isLocked = false;
+        character.speed *= 2;
     }
     // Update is called once per frame
     void Update()
