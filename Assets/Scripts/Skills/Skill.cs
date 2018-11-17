@@ -20,7 +20,7 @@ public class Skill : MonoBehaviour {
         attack.GetComponent<Attack>().character = gameObject.GetComponent<Character>();
         GetComponent<Animator>().SetBool(triggerName, true);
         GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
-        if (GetComponent<AudioSource>()!=null)
+        if (GetComponent<AudioSource>()!=null && skillSound!=null)
         { 
         GetComponent<AudioSource>().PlayOneShot(skillSound);
         }
