@@ -163,6 +163,10 @@ public class Character : MonoBehaviour {
         {
             GetComponent<SpriteRenderer>().flipX=true;
         }
+        else if(movement.x > 0)//signs differents change sprite
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     public void UpdateAim()

@@ -221,6 +221,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 544799588}
+    - target: {fileID: 1437441907089566, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
+      propertyPath: m_TagString
+      value: Player1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
   m_IsPrefabAsset: 0
@@ -294,6 +298,10 @@ Prefab:
         type: 2}
       propertyPath: speed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437441907089566, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
+      propertyPath: m_TagString
+      value: Player2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe0245de11abd04e893b55fc6c39549, type: 2}

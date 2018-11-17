@@ -33,8 +33,9 @@ public class SuitCaseAttack : Attack {
         {
             direction = new Vector2(character.transform.position.x - gameObject.transform.position.x,
                 character.transform.position.y - gameObject.transform.position.y).normalized;
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Clamp(1/(character.transform.position - gameObject.transform.position).magnitude, 0, 1) * maxSpeed * direction.x,
-                Mathf.Clamp(1/(arrivalPoint - gameObject.transform.position).magnitude, 0, 1) * maxSpeed * direction.y);
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x * maxSpeed, direction.y * maxSpeed);
+                //new Vector2(Mathf.Clamp(1/(character.transform.position - gameObject.transform.position).magnitude, 0, 1) * maxSpeed * direction.x,
+               //Mathf.Clamp(1/(arrivalPoint - gameObject.transform.position).magnitude, 0, 1) * maxSpeed * direction.y);
         }
 
         if ((arrivalPoint - gameObject.transform.position).magnitude < 0.2)
