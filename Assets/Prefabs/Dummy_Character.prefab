@@ -34,7 +34,7 @@ GameObject:
   - component: {fileID: 50581889419520354}
   m_Layer: 0
   m_Name: Dummy_Character
-  m_TagString: Untagged
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1437441907089566}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -229,11 +229,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0.5
   lastTimedUsed: 0
-  triggerName: Batte
+  triggerName: IsHitting
   prefabToInstanciate: {fileID: 1132767391756806, guid: 1d480ca76c5ec434dad2250225db2a42,
     type: 2}
   spawnRange: 1
-  timeAnimation: 1
+  timeAnimation: 0.3
   skillSound: {fileID: 0}
 --- !u!114 &114457697117104864
 MonoBehaviour:
@@ -303,11 +303,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1
   lastTimedUsed: 0
-  triggerName: Case
+  triggerName: IsHitting
   prefabToInstanciate: {fileID: 1025970895093650, guid: 0cc247a5206e5c54c9acd9c336f1dfae,
     type: 2}
   spawnRange: 1
-  timeAnimation: 1
+  timeAnimation: 0.3
   skillSound: {fileID: 0}
 --- !u!114 &114718669890836016
 MonoBehaviour:

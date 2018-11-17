@@ -52,7 +52,7 @@ public class SuitCaseAttack : Attack {
         }
         else
         {
-            if (collision.GetComponent<AudioSource>() != null)
+            if (collision.GetComponent<AudioSource>() != null && hittingSound != null)
             {
                 GetComponent<AudioSource>().PlayOneShot(hittingSound);
             }
