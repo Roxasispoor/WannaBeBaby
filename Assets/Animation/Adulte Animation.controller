@@ -212,31 +212,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102877032542568240
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: malette
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 590c4e5c787444141b1c2c22def8f94c, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &1102991609990328270
 AnimatorState:
   serializedVersion: 5
@@ -277,9 +252,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 1102812372449474192}
     m_Position: {x: 288, y: 0, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102877032542568240}
-    m_Position: {x: 264, y: 276, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102767549637625662}
     m_Position: {x: 12, y: 192, z: 0}
