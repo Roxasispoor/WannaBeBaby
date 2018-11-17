@@ -6,7 +6,7 @@ public enum PartOfSuitCaseAttack { FirstMove, Return}
 
 public class SuitCaseAttack : Attack {
 
-    private Vector2 direction;
+
     public float range;
     public float maxSpeed;
     public PartOfSuitCaseAttack state;
