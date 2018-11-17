@@ -15,26 +15,31 @@ public class SuitCaseAttack : Attack {
     private void Awake()
     {
         startTime = Time.time;
-        arrivalPoint = new Vector3(gameObject.transform.position.x + direction.x * range, gameObject.transform.position.y + direction.y * range);
+        state = PartOfSuitCaseAttack.FirstMove;
     }
     // Use this for initialization
     void Start () {
-		
-	}
+        arrivalPoint = new Vector3(character.transform.position.x + direction.x * range, character.transform.position.y + direction.y * range);
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (state == PartOfSuitCaseAttack.FirstMove)
         {
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(((arrivalPoint - gameObject.transform.position).magnitude /range )* maxSpeed * direction.x,
-                ((arrivalPoint - gameObject.transform.position).magnitude / range) * maxSpeed * direction.y);
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(((arrivalPoint - gameObject.transform.position).magnitude /range )* maxSpeed * direction.x + maxSpeed/6 * direction.x,
+                ((arrivalPoint - gameObject.transform.position).magnitude / range) * maxSpeed * direction.y + maxSpeed/5  * direction.y);
         }
         if (state == PartOfSuitCaseAttack.Return)
         {
             direction = new Vector2(character.transform.position.x - gameObject.transform.position.x,
-                character.transform.position.y - gameObject.transform.position.y);
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Clamp((arrivalPoint - gameObject.transform.position).magnitude, 0, 1) * maxSpeed * direction.x,
-                Mathf.Clamp((arrivalPoint - gameObject.transform.position).magnitude, 0, 1) * maxSpeed * direction.y);
+                character.transform.position.y - gameObject.transform.position.y).normalized;
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Clamp(1/(character.transform.position - gameObject.transform.position).magnitude, 0, 1) * maxSpeed * direction.x,
+                Mathf.Clamp(1/(arrivalPoint - gameObject.transform.position).magnitude, 0, 1) * maxSpeed * direction.y);
+        }
+
+        if ((arrivalPoint - gameObject.transform.position).magnitude < 0.2)
+        {
+            state = PartOfSuitCaseAttack.Return;
         }
     }
 
@@ -46,6 +51,10 @@ public class SuitCaseAttack : Attack {
         }
         else
         {
+            if (collision.GetComponent<AudioSource>() != null)
+            {
+                GetComponent<AudioSource>().PlayOneShot(hittingSound);
+            }
             collision.gameObject.GetComponent<Character>().TakeDamage(damage);
             character.TakeDamage(-damage);
             Destroy(gameObject);

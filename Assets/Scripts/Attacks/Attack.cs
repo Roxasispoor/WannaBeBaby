@@ -12,6 +12,7 @@ public class Attack: MonoBehaviour {
     protected float startTime;
     public Character character;
     public Vector2 direction;
+    public AudioClip hittingSound;
     private void Start()
     {
         Init();
@@ -29,5 +30,6 @@ public class Attack: MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
 	}
 
