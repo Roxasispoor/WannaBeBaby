@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class GatlingAttack : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public float range;
+    public float maxSpeed;
+    public float firerate;
+    public float time;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
