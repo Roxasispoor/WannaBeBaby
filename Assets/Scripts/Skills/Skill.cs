@@ -15,7 +15,7 @@ public class Skill : MonoBehaviour {
     public void Use(Character character)
     {
         GameObject attack = Instantiate(prefabToInstanciate, new Vector3(character.transform.position.x + spawnRange * character.AimDirection.x,
-            character.transform.position.y + spawnRange * character.AimDirection.y), Quaternion.identity);
+            character.transform.position.y + spawnRange * character.AimDirection.y), Quaternion.identity,character.transform);
         attack.GetComponent<Attack>().direction = character.AimDirection;
         attack.GetComponent<Attack>().character = gameObject.GetComponent<Character>();
         GetComponent<Animator>().SetBool(triggerName, true);
