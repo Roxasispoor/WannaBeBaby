@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Character : MonoBehaviour {
 
-    private Player player;
+    public Player player;
+    public GameObject gameObjectPlayer;
     [SerializeField]
     private int age;
 
@@ -12,7 +13,8 @@ public class Character : MonoBehaviour {
     [SerializeField]
     private List<Form> forms;         // 0-> baby  1->Teen  2->Adult  3->Old  4->Lich
     private Vector2 aimDirection;
-    [SerializeField]
+
+    public float speed = 10;
 
 
     // Use this for initialization
@@ -20,7 +22,7 @@ public class Character : MonoBehaviour {
     {
         aimDirection = new Vector2(1, 0);
         currentForm = forms[2];
-
+        player = gameObjectPlayer.GetComponent<Player>();   
     }
 
     public int Age
@@ -140,5 +142,11 @@ public class Character : MonoBehaviour {
         //launch animator for change of sprite
         CurrentForm = Forms[id];
         currentForm.HurtBox.gameObject.SetActive(true);
+    }
+
+    public void Movement()
+    {
+        Vector2 movement = new Vector2(player.input.leftHorizontal, player.input.leftVertical);
+        GetComponent<Rigidbody2D>().velocity = movement.normalized;
     }
 }
