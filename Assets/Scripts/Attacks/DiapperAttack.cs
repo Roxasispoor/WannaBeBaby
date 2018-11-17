@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DiapperAttack : Attack {
-    public float lockTime;
+    public float slowTime;
     void Start()
     {
         Init();
@@ -23,7 +23,7 @@ public class DiapperAttack : Attack {
     public IEnumerator LockForSeconds(Character character)
     {
         character.speed *= 0.5f;
-        yield return new WaitForSeconds(lockTime);
+        yield return new WaitForSeconds(slowTime);
         character.speed *= 2;
     }
     // Update is called once per frame

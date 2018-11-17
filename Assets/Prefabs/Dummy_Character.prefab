@@ -34,7 +34,7 @@ GameObject:
   - component: {fileID: 50839127806647972}
   m_Layer: 0
   m_Name: Dummy_Character
-  m_TagString: Player2
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,14 +227,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73928cfc9986ce6419088e16bb8f33c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.5
+  cooldown: 1
   lastTimedUsed: 0
-  triggerName: Batte
+  triggerName: IsHitting
   prefabToInstanciate: {fileID: 1132767391756806, guid: 1d480ca76c5ec434dad2250225db2a42,
     type: 2}
   spawnRange: 1
-  timeAnimation: 0.3
-  skillSound: {fileID: 0}
+  timeAnimation: 0.5
+  skillSound: {fileID: 8300000, guid: 34d79101c6a7289428620f42e63b0194, type: 3}
 --- !u!114 &114457697117104864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -303,12 +303,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1
   lastTimedUsed: 0
-  triggerName: Case
+  triggerName: IsHitting
   prefabToInstanciate: {fileID: 1025970895093650, guid: 0cc247a5206e5c54c9acd9c336f1dfae,
     type: 2}
   spawnRange: 1
   timeAnimation: 0.3
-  skillSound: {fileID: 0}
+  skillSound: {fileID: 8300000, guid: 92d45f29ab392ff4497f0c93dcb1ca97, type: 3}
 --- !u!114 &114718669890836016
 MonoBehaviour:
   m_ObjectHideFlags: 1

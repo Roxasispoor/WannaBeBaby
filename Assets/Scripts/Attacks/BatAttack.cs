@@ -12,7 +12,7 @@ public class BatAttack : Attack {
     {
         if (collision.GetComponent<AudioSource>() != null && hittingSound != null)
         {
-            GetComponent<AudioSource>().PlayOneShot(hittingSound);
+            collision.GetComponent<AudioSource>().PlayOneShot(hittingSound);
         }
         if (collision.tag != character.tag)
         {
