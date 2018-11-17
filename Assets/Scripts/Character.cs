@@ -78,12 +78,12 @@ public class Character : MonoBehaviour {
     void Update()
     {
         //Debug
-        if (Input.GetButtonDown("DebugButton"))
+        if (Input.GetKeyDown("a"))
         {
             TakeDamage(-5);
-            Debug.Log(currentForm.name);
+            Debug.Log(currentForm.label);
         }
-        if (Input.GetButtonDown("DebugButtonB"))
+        if (Input.GetKeyDown("z"))
         {
             currentForm.UseSkill(0, this);
         }
