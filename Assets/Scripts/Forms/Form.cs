@@ -8,7 +8,9 @@ public class Form : MonoBehaviour {
 	void Start () {
 		
 	}
-	
+
+    private Collider2D hurtBox;
+        
 	// Update is called once per frame
 	void Update () {
 		
