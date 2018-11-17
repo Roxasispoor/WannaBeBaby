@@ -64,13 +64,9 @@ public class Form : MonoBehaviour {
     // Update is called once per frame
     private void Update()
     {
-<<<<<<< HEAD
-        //animator.SetFloat("Speed", moveSpeed);
-=======
         if(animatorController!=null)
         { 
         GetComponent<Animator>().SetFloat("Speed", GetComponent<Rigidbody2D>().velocity.magnitude);
         }
->>>>>>> 7e26968bf86e0f9702fc2cc5e2f5f2dd7b19ddaf
     }
 }
