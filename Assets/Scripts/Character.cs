@@ -77,12 +77,6 @@ public class Character : MonoBehaviour {
 
     void Update()
     {
-        //Debug
-        if (Input.GetButtonDown("DebugButton"))
-        {
-            TakeDamage(-5);
-            Debug.Log(currentForm);
-        }
 
     }
     // Update is called once per frame
