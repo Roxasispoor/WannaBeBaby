@@ -81,7 +81,7 @@ public class Character : MonoBehaviour {
         if (Input.GetButtonDown("DebugButton"))
         {
             TakeDamage(-5);
-            Debug.Log(currentForm);
+            Debug.Log(currentForm.name);
         }
         if (Input.GetButtonDown("DebugButtonB"))
         {

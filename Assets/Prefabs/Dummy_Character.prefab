@@ -22,11 +22,12 @@ GameObject:
   - component: {fileID: 212682239414501618}
   - component: {fileID: 70290436692533530}
   - component: {fileID: 114666877912723858}
-  - component: {fileID: 114511302098928652}
-  - component: {fileID: 114255223167503888}
-  - component: {fileID: 114848736958471418}
-  - component: {fileID: 114552387843152934}
-  - component: {fileID: 114957768621579546}
+  - component: {fileID: 114429396759820730}
+  - component: {fileID: 114977296249244408}
+  - component: {fileID: 114718669890836016}
+  - component: {fileID: 114531526891070288}
+  - component: {fileID: 114344639433843230}
+  - component: {fileID: 114457697117104864}
   m_Layer: 0
   m_Name: Dummy_Character
   m_TagString: Untagged
@@ -62,7 +63,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.16, y: 0.16}
   m_Direction: 0
---- !u!114 &114255223167503888
+--- !u!114 &114344639433843230
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,12 +71,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1437441907089566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908c84a79ee4f364b909f632a5cbe19a, type: 3}
+  m_Script: {fileID: 11500000, guid: e26c96c6680970846ad60f7858cef6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: OldForm
   skills: []
-  hurtBox: {fileID: 70290436692533530}
---- !u!114 &114511302098928652
+  hurtBox: {fileID: 0}
+  moveSpeed: 0
+--- !u!114 &114429396759820730
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,12 +86,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1437441907089566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 211ae14822dcbe14294baf03801e0d76, type: 3}
+  m_Script: {fileID: 11500000, guid: 73928cfc9986ce6419088e16bb8f33c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skills: []
-  hurtBox: {fileID: 70290436692533530}
---- !u!114 &114552387843152934
+  cooldown: 0.5
+  lastTimedUsed: 0
+  triggerName: Batte
+  prefabToInstanciate: {fileID: 1132767391756806, guid: 1d480ca76c5ec434dad2250225db2a42,
+    type: 2}
+  spawnRange: 1
+--- !u!114 &114457697117104864
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,11 +103,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1437441907089566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b8c898d12310c4ca6cc3793bd887be, type: 3}
+  m_Script: {fileID: 11500000, guid: e26c96c6680970846ad60f7858cef6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: LichForm
   skills: []
-  hurtBox: {fileID: 70290436692533530}
+  hurtBox: {fileID: 0}
+  moveSpeed: 0
+--- !u!114 &114531526891070288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437441907089566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e26c96c6680970846ad60f7858cef6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: AdultForm
+  skills: []
+  hurtBox: {fileID: 0}
+  moveSpeed: 0
 --- !u!114 &114666877912723858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,12 +138,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   age: 30
   forms:
-  - {fileID: 114552387843152934}
-  - {fileID: 114511302098928652}
-  - {fileID: 114957768621579546}
-  - {fileID: 114255223167503888}
-  - {fileID: 114848736958471418}
---- !u!114 &114848736958471418
+  - {fileID: 114977296249244408}
+  - {fileID: 114718669890836016}
+  - {fileID: 114531526891070288}
+  - {fileID: 114344639433843230}
+  - {fileID: 114457697117104864}
+--- !u!114 &114718669890836016
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,12 +151,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1437441907089566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48230ace23bc55649a6090da58e7222b, type: 3}
+  m_Script: {fileID: 11500000, guid: e26c96c6680970846ad60f7858cef6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skills: []
-  hurtBox: {fileID: 70290436692533530}
---- !u!114 &114957768621579546
+  name: TeenForm
+  skills:
+  - {fileID: 114429396759820730}
+  hurtBox: {fileID: 0}
+  moveSpeed: 0
+--- !u!114 &114977296249244408
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,11 +167,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1437441907089566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47d2fac8a104d343a21ca9b747f2c77, type: 3}
+  m_Script: {fileID: 11500000, guid: e26c96c6680970846ad60f7858cef6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: BabyForm
   skills: []
-  hurtBox: {fileID: 70290436692533530}
+  hurtBox: {fileID: 0}
+  moveSpeed: 0
 --- !u!212 &212682239414501618
 SpriteRenderer:
   m_ObjectHideFlags: 1
