@@ -23,12 +23,14 @@ GameObject:
   - component: {fileID: 70290436692533530}
   - component: {fileID: 114666877912723858}
   - component: {fileID: 114429396759820730}
+  - component: {fileID: 114692917317072286}
   - component: {fileID: 114977296249244408}
   - component: {fileID: 114718669890836016}
   - component: {fileID: 114531526891070288}
   - component: {fileID: 114344639433843230}
   - component: {fileID: 114457697117104864}
   - component: {fileID: 82285963200965808}
+  - component: {fileID: 95783463626115892}
   m_Layer: 0
   m_Name: Dummy_Character
   m_TagString: Untagged
@@ -159,6 +161,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &95783463626115892
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437441907089566}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 46fa7c0a7a1d0b54abfb9eea121e45b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114344639433843230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,8 +241,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: Adult
-  skills: []
-  animator: {fileID: 0}
+  skills:
+  - {fileID: 114692917317072286}
+  animator: {fileID: 95783463626115892}
   hurtBox: {fileID: 70290436692533530}
   moveSpeed: 0
 --- !u!114 &114666877912723858
@@ -243,6 +264,24 @@ MonoBehaviour:
   - {fileID: 114531526891070288}
   - {fileID: 114344639433843230}
   - {fileID: 114457697117104864}
+--- !u!114 &114692917317072286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437441907089566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73928cfc9986ce6419088e16bb8f33c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 1
+  lastTimedUsed: 0
+  triggerName: Case
+  prefabToInstanciate: {fileID: 1025970895093650, guid: 0cc247a5206e5c54c9acd9c336f1dfae,
+    type: 2}
+  spawnRange: 1
+  skillSound: {fileID: 0}
 --- !u!114 &114718669890836016
 MonoBehaviour:
   m_ObjectHideFlags: 1
