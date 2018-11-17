@@ -8,7 +8,8 @@ public class Attack: MonoBehaviour {
     protected Sprite sprite;
     protected float surviveTime;
     protected float startTime;
-    protected Character character;
+    public Character character;
+    public Vector2 direction;
 
 	// Use this for initialization
 	void Start () {
