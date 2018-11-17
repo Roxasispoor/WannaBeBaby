@@ -10,6 +10,10 @@ public class BatAttack : Attack {
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.GetComponent<AudioSource>() != null)
+        {
+            GetComponent<AudioSource>().PlayOneShot(hittingSound);
+        }
         if (collision.tag != character.tag)
         {
             collision.gameObject.GetComponent<Character>().TakeDamage(damage);
@@ -21,4 +25,5 @@ public class BatAttack : Attack {
         TimeToLive();
 		
 	}
+    
 }
