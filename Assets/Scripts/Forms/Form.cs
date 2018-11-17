@@ -5,11 +5,11 @@ using UnityEngine;
 public abstract class Form : MonoBehaviour {
     [SerializeField]
     private List<Skill> skills;
-    public void UseSkill(int i)
+    public void UseSkill(int i,Character character)
     {
         if(i>0 && i<skills.Count)
         {
-            skills[i].Use();
+            skills[i].Use(character);
         }
         else
         {
