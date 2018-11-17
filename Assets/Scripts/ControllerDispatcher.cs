@@ -20,6 +20,7 @@ public class ControllerDispatcher: MonoBehaviour {
     // Use this for initialization
     void Start () {
         playerInputs = FindObjectsOfType<PlayerInput>();
+        assignedController = new List<int>();
         Debug.Log("Player found: " + playerInputs.Length);
         Debug.Assert(numberControllerSupported > 0);
 	}
@@ -27,11 +28,20 @@ public class ControllerDispatcher: MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        for (int i=0; i < numberControllerSupported; i++)
+        for (int i=1; i < numberControllerSupported; i++)
         {
-            if (Input.GetButtonDown("J" + i + "BumpLeft"))
+            if (Input.GetButtonDown("J" + i + "ButtonA") && !assignedController.Contains(i))
             {
-                //for (int j = 0; j < playerInputs; )
+                for (int j = 0; j < playerInputs.Length; j++)
+                {
+                    if (!playerInputs[j].ControllerConnected)
+                    {
+                        playerInputs[j].SetJoystickNumber(i);
+                        Debug.Log("controller " + i + "set to " + playerInputs[j].gameObject.name);
+                        assignedController.Add(i);
+                        break;
+                    }
+                }
             }
         }
     }
