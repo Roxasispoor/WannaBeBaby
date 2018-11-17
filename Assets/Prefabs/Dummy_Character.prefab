@@ -259,7 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0.5
   lastTimedUsed: 0
-  triggerName: Batte
+  triggerName: IsHitting
   prefabToInstanciate: {fileID: 1132767391756806, guid: 1d480ca76c5ec434dad2250225db2a42,
     type: 2}
   spawnRange: 1
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1
   lastTimedUsed: 0
-  triggerName: Case
+  triggerName: IsHitting
   prefabToInstanciate: {fileID: 1025970895093650, guid: 0cc247a5206e5c54c9acd9c336f1dfae,
     type: 2}
   spawnRange: 1
