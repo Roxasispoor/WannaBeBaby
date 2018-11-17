@@ -12,11 +12,11 @@ public abstract class Form : MonoBehaviour {
     private float moveSpeed;
     public void UseSkill(int i,Character character)
     {
-        if(i>0 && i<skills.Count &&  Time.fixedTime - skills[i].lastTimedUsed > skills[i].cooldown)
+        if(i>=0 && i<skills.Count &&  Time.fixedTime - skills[i].lastTimedUsed > skills[i].cooldown)
             
         {
             skills[i].Use(character);
-            animator.SetTrigger(skills[i].triggerName);
+            //animator.SetTrigger(skills[i].triggerName);
             skills[i].lastTimedUsed = Time.fixedTime;
             //lance l'animation sur le personnage
 

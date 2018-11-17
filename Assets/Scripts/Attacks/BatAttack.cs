@@ -6,7 +6,7 @@ public class BatAttack : Attack {
 
 	// Use this for initialization
 	void Start () {
-		
+        Init();
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,6 +18,7 @@ public class BatAttack : Attack {
     }
     // Update is called once per frame
     void Update () {
+        TimeToLive();
 		
 	}
 }

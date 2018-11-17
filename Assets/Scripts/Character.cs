@@ -18,7 +18,7 @@ public class Character : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        aimDirection = new Vector2(1, 0);
         currentForm = forms[2];
 
     }
@@ -83,7 +83,10 @@ public class Character : MonoBehaviour {
             TakeDamage(-5);
             Debug.Log(currentForm);
         }
-
+        if (Input.GetButtonDown("DebugButtonB"))
+        {
+            currentForm.UseSkill(0, this);
+        }
     }
     // Update is called once per frame
     void LateUpdate () {
