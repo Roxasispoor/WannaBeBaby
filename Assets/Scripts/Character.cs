@@ -155,8 +155,13 @@ public class Character : MonoBehaviour {
 
     public void Movement()
     {
+        Vector2 oldMovement = GetComponent<Rigidbody2D>().velocity;
         Vector2 movement = new Vector2(player.input.leftHorizontal, player.input.leftVertical);
         GetComponent<Rigidbody2D>().velocity = movement.normalized * speed;
+        if(movement.x<0)//signs differents change sprite
+        {
+            GetComponent<SpriteRenderer>().flipX=true;
+        }
     }
 
     public void UpdateAim()
