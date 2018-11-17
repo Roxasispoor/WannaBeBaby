@@ -155,6 +155,99 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1143728034 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1437441907089566, guid: efe0245de11abd04e893b55fc6c39549,
+    type: 2}
+  m_PrefabInternal: {fileID: 1143728033}
+--- !u!114 &1143728035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1143728034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61af88734b9a9be46975240168ff4da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  age: 30
+  forms:
+  - {fileID: 1143728039}
+  - {fileID: 1143728036}
+  - {fileID: 1143728040}
+  - {fileID: 1143728037}
+  - {fileID: 1143728038}
+--- !u!114 &1143728036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1143728034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 211ae14822dcbe14294baf03801e0d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills: []
+  hurtBox: {fileID: 1143728041}
+--- !u!114 &1143728037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1143728034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908c84a79ee4f364b909f632a5cbe19a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills: []
+  hurtBox: {fileID: 1143728041}
+--- !u!114 &1143728038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1143728034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48230ace23bc55649a6090da58e7222b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills: []
+  hurtBox: {fileID: 1143728041}
+--- !u!114 &1143728039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1143728034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b8c898d12310c4ca6cc3793bd887be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills: []
+  hurtBox: {fileID: 1143728041}
+--- !u!114 &1143728040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1143728034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47d2fac8a104d343a21ca9b747f2c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills: []
+  hurtBox: {fileID: 1143728041}
+--- !u!70 &1143728041 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 70290436692533530, guid: efe0245de11abd04e893b55fc6c39549,
+    type: 2}
+  m_PrefabInternal: {fileID: 1143728033}
 --- !u!1 &1464737467
 GameObject:
   m_ObjectHideFlags: 0

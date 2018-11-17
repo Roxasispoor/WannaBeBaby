@@ -4,8 +4,17 @@ using UnityEngine;
 
 public abstract class InstantiatorSkill : Skill {
     public GameObject prefabToInstanciate;
-	// Use this for initialization
-	void Start () {
+    public override void Use(Character character)
+    {
+       
+            Instantiate(prefabToInstanciate, character.transform.position, Quaternion.identity);
+            
+
+        
+
+    }
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
