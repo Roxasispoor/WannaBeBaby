@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Attack: MonoBehaviour {
-
+    public int damage;
     protected Collider2D collisionBox;
     protected Sprite sprite;
     protected float surviveTime;
