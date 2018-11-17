@@ -19,6 +19,7 @@ public class Skill : MonoBehaviour {
         attack.GetComponent<Attack>().direction = character.AimDirection;
         attack.GetComponent<Attack>().character = gameObject.GetComponent<Character>();
         GetComponent<Animator>().SetBool(triggerName, true);
+        GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
         if (GetComponent<AudioSource>()!=null)
         { 
         GetComponent<AudioSource>().PlayOneShot(skillSound);
@@ -29,5 +30,6 @@ public class Skill : MonoBehaviour {
     {
         yield return new WaitForSeconds(timeAnimation);
         GetComponent<Animator>().SetBool(triggerName, false);
+        GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
     }
 }
