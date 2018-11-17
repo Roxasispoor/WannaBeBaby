@@ -7,7 +7,7 @@ public class Character : MonoBehaviour {
     private Player player;
     [SerializeField]
     private int age;
-
+    public bool isLocked = false;
     private Form currentForm;
     [SerializeField]
     private List<Form> forms;         // 0-> baby  1->Teen  2->Adult  3->Old  4->Lich
