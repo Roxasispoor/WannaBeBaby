@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114531526891070288}
   - component: {fileID: 114344639433843230}
   - component: {fileID: 114457697117104864}
+  - component: {fileID: 82285963200965808}
   m_Layer: 0
   m_Name: Dummy_Character
   m_TagString: Untagged
@@ -63,6 +64,101 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.16, y: 0.16}
   m_Direction: 0
+--- !u!82 &82285963200965808
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437441907089566}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114344639433843230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,9 +170,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26c96c6680970846ad60f7858cef6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: OldForm
+  label: Old
   skills: []
-  hurtBox: {fileID: 0}
+  animator: {fileID: 0}
+  hurtBox: {fileID: 70290436692533530}
   moveSpeed: 0
 --- !u!114 &114429396759820730
 MonoBehaviour:
@@ -95,6 +192,7 @@ MonoBehaviour:
   prefabToInstanciate: {fileID: 1132767391756806, guid: 1d480ca76c5ec434dad2250225db2a42,
     type: 2}
   spawnRange: 1
+  skillSound: {fileID: 0}
 --- !u!114 &114457697117104864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,9 +204,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26c96c6680970846ad60f7858cef6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: LichForm
+  label: Lich
   skills: []
-  hurtBox: {fileID: 0}
+  animator: {fileID: 0}
+  hurtBox: {fileID: 70290436692533530}
   moveSpeed: 0
 --- !u!114 &114531526891070288
 MonoBehaviour:
@@ -121,9 +220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26c96c6680970846ad60f7858cef6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: AdultForm
+  label: Adult
   skills: []
-  hurtBox: {fileID: 0}
+  animator: {fileID: 0}
+  hurtBox: {fileID: 70290436692533530}
   moveSpeed: 0
 --- !u!114 &114666877912723858
 MonoBehaviour:
@@ -154,10 +254,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26c96c6680970846ad60f7858cef6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: TeenForm
+  label: Teen
   skills:
   - {fileID: 114429396759820730}
-  hurtBox: {fileID: 0}
+  animator: {fileID: 0}
+  hurtBox: {fileID: 70290436692533530}
   moveSpeed: 0
 --- !u!114 &114977296249244408
 MonoBehaviour:
@@ -170,9 +271,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26c96c6680970846ad60f7858cef6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: BabyForm
+  label: Baby
   skills: []
-  hurtBox: {fileID: 0}
+  animator: {fileID: 0}
+  hurtBox: {fileID: 70290436692533530}
   moveSpeed: 0
 --- !u!212 &212682239414501618
 SpriteRenderer:
