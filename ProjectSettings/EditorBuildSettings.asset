@@ -9,12 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/EasyMainMenu/Scenes/Main Menu Old/LoginScreen.unity
-    guid: 4113930fb952b0141b3b20e9b61e1a3f
-  - enabled: 1
-    path: Assets/EasyMainMenu/Scenes/Main Menu Old/MainMenu.unity
-    guid: c09f4b0b2a9226946aa44a3dd8ffdfa6
-  - enabled: 1
-    path: Assets/EasyMainMenu/Scenes/Main Menu Old/Maze.unity
-    guid: d193b2b90e358f04685393c66d4ace54
+    path: Assets/Scenes/TestScene.unity
+    guid: e85e3105f7edcf645854b7d8fc3cbaf4
   m_configObjects: {}
