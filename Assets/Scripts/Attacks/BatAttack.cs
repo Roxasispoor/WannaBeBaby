@@ -10,12 +10,13 @@ public class BatAttack : Attack {
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<AudioSource>() != null && hittingSound != null)
+      
+        if (collision.tag != character.tag && collision.gameObject.GetComponent<Character>()!=null)
         {
-            collision.GetComponent<AudioSource>().PlayOneShot(hittingSound);
-        }
-        if (collision.tag != character.tag)
-        {
+            if (collision.GetComponent<AudioSource>() != null && hittingSound != null)
+            {
+                collision.GetComponent<AudioSource>().PlayOneShot(hittingSound);
+            }
             collision.gameObject.GetComponent<Character>().TakeDamage(damage);
             character.TakeDamage(-damage);
         }

@@ -10,13 +10,15 @@ public class Stun : Attack
     {
         Init();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+  
+        
+        private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<AudioSource>() != null && hittingSound != null)
         {
             GetComponent<AudioSource>().PlayOneShot(hittingSound);
         }
-        if (collision.tag != character.tag)
+        if (collision.tag != character.tag && collision.GetComponent<Character>())
         {
 
             collision.GetComponent<Character>().isLocked = true;

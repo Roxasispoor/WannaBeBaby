@@ -16,6 +16,7 @@ public class Character : MonoBehaviour {
     [SerializeField]
     private Vector2 aimDirection;
     public float timeEndLock;
+    public float timeEndSlow;
     public float speed = 10;
     public bool isInvincible=false;
 
@@ -95,9 +96,13 @@ public class Character : MonoBehaviour {
         {
             currentForm.UseSkill(0, this);
         }
+        if (player.input.bumpLeft)
+         {
+            currentForm.UseSkill(1, this);
+         }
 
-        //Debug
-        if (Input.GetKeyDown("a"))
+            //Debug
+            if (Input.GetKeyDown("a"))
         {
             TakeDamage(-5);
             Debug.Log(currentForm.label);
@@ -168,8 +173,16 @@ public class Character : MonoBehaviour {
     {
         Vector2 oldMovement = GetComponent<Rigidbody2D>().velocity;
         Vector2 movement = new Vector2(player.input.leftHorizontal, player.input.leftVertical);
-        GetComponent<Rigidbody2D>().velocity = movement.normalized * speed;
-        if(movement.x<0)//signs differents change sprite
+        if(timeEndSlow>Time.fixedTime)
+        {
+            GetComponent<Rigidbody2D>().velocity = movement.normalized * currentForm.moveSpeed/2;
+
+        }
+        else
+        { 
+        GetComponent<Rigidbody2D>().velocity = movement.normalized * currentForm.moveSpeed;
+        }
+        if (movement.x<0)//signs differents change sprite
         {
             GetComponent<SpriteRenderer>().flipX=true;
         }

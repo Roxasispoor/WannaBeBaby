@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4668918439041218}
   - component: {fileID: 58086838533310812}
   - component: {fileID: 114444057093397668}
+  - component: {fileID: 114883635976006484}
   m_Layer: 0
   m_Name: Kawaii
   m_TagString: Untagged
@@ -55,7 +56,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.35
 --- !u!114 &114444057093397668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,3 +75,27 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   hittingSound: {fileID: 0}
   stunTime: 2
+--- !u!114 &114883635976006484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1856369924560656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc151bf477d025448adc8a1fc3f58ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 0
+  SaveKey: 307
+  saveName: 
+  savePercentage: 0
+  saveName_text: {fileID: 0}
+  savePercentage_text: {fileID: 0}
+  slotId: 0
+  saveTriggerId: 0
+  sceneName: 
+  allUI: []
+  QsaveName_text: {fileID: 0}
+  QsavePercentage_text: {fileID: 0}
+  QslotId: 0
