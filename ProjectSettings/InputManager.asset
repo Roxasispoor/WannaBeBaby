@@ -580,7 +580,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 1
+    joyNum: 6
   - serializedVersion: 3
     m_Name: J6LeftVertical
     descriptiveName: 
