@@ -77,6 +77,14 @@ public class Character : MonoBehaviour {
 
     void Update()
     {
+        Movement();
+        UpdateAim();
+
+        if (player.input.bumpRight)
+        {
+            currentForm.UseSkill(0, this);
+        }
+
         //Debug
         if (Input.GetKeyDown("a"))
         {
@@ -87,7 +95,6 @@ public class Character : MonoBehaviour {
         {
             currentForm.UseSkill(0, this);
         }
-        Movement();
     }
     // Update is called once per frame
     void LateUpdate () {
@@ -146,6 +153,12 @@ public class Character : MonoBehaviour {
     public void Movement()
     {
         Vector2 movement = new Vector2(player.input.leftHorizontal, player.input.leftVertical);
-        GetComponent<Rigidbody2D>().velocity = movement.normalized * Time.deltaTime * speed;
+        GetComponent<Rigidbody2D>().velocity = movement.normalized * speed;
+    }
+
+    public void UpdateAim()
+    {
+        Vector2 aim = new Vector2(player.input.rightHorizontal, player.input.rightVertical);
+        aimDirection = aim.normalized;
     }
 }
