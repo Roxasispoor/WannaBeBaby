@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FormOld : MonoBehaviour {
+public class FormOld : Form {
 
 	// Use this for initialization
 	void Start () {
