@@ -22,9 +22,22 @@ public abstract class Form : MonoBehaviour {
 	}
 
     private Collider2D hurtBox;
-        
-	// Update is called once per frame
-	void Update () {
+
+    public Collider2D HurtBox
+    {
+        get
+        {
+            return hurtBox;
+        }
+
+        set
+        {
+            hurtBox = value;
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

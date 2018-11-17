@@ -8,6 +8,8 @@ public class Character : MonoBehaviour {
 	void Start () {
 		
 	}
+
+    private Player player;
     [SerializeField]
     private int age;
     private Form currentForm;
@@ -15,6 +17,7 @@ public class Character : MonoBehaviour {
     private Vector2 aimDirection;
     [SerializeField]
     private float moveSpeed;          //Needs to change when form changes
+
 
     public int Age
     {
@@ -90,10 +93,10 @@ public class Character : MonoBehaviour {
 
     public void changeForm(int id)
     {
-        currentForm.hurtBox.gameObject.SetActive(false);
+        currentForm.HurtBox.gameObject.SetActive(false);
 
         //launch animator for change of sprite
         CurrentForm = Forms[id];
-        Hurtbox
+        currentForm.HurtBox.gameObject.SetActive(true);
     }
 }
