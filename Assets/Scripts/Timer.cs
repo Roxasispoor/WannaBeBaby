@@ -10,8 +10,10 @@ public class Timer : MonoBehaviour
     private bool isFinished;
     private float targetTime = 0;
     public Text textToUpdate;
-    public Slider timerSlider;
-
+    public void Start()
+    {
+        StartTimer(120);
+    }
     public Timer()
     {
         this.isFinished = false;
@@ -33,12 +35,11 @@ public class Timer : MonoBehaviour
     public void StartTimer(float time)
     {
         targetTime = time;
-        timerSlider.maxValue = time;
-        timerSlider.value = timerSlider.maxValue;
     }
 
     void Update()
     {
+        Debug.Log(targetTime);
         if (targetTime > 0)
 
         {
@@ -51,8 +52,7 @@ public class Timer : MonoBehaviour
         }
         if (textToUpdate != null)
         {
-            textToUpdate.text = "Time Left : " + (int)targetTime;
-            timerSlider.value = targetTime;
+            textToUpdate.text = targetTime.ToString();
         }
     }
   
