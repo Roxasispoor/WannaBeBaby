@@ -16,7 +16,6 @@ public class PlayerInput : MonoBehaviour {
     public bool TriggerLeft;
     public bool TriggerRight;
 
-
     public bool ControllerConnected
     {
         get
@@ -32,8 +31,27 @@ public class PlayerInput : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!ControllerConnected)
+            return;
 
-	}
+        leftHorizontal = Input.GetAxis("J" + controllerNumber + "LeftHorizontal");
+        leftVertical = Input.GetAxis("J" + controllerNumber + "LeftVertical");
+        rightHorizontal = Input.GetAxis("J" + controllerNumber + "RightHorizontal");
+        rightVertical = Input.GetAxis("J" + controllerNumber + "RightVertical");
+        bumpLeft = Input.GetButton("J" + controllerNumber + "BumpLeft");
+        bumpRight = Input.GetButton("J" + controllerNumber + "BumpRight");
+        TriggerRight = false;
+        TriggerRight = true;
+        if (Input.GetAxis("J" + controllerNumber + "Triggers") < -0.5f)
+        {
+            TriggerLeft = true;
+        } else if (Input.GetAxis("J" + controllerNumber + "Triggers") > 0.5f)
+        {
+            TriggerLeft = false;
+        }
+
+
+    }
 
     public void SetJoystickNumber(int num)
     {
