@@ -9,6 +9,11 @@ public class MenuManager : MonoBehaviour {
     public GameObject Panel2;
     public GameObject Panel3;
     public GameObject Panel4;
+    public GameObject Panel11;
+    public GameObject Panel22;
+    public GameObject Panel33;
+    public GameObject Panel44;
+
     public PlayerInput player1;
     public PlayerInput player2;
     public PlayerInput player3;
@@ -21,13 +26,37 @@ public class MenuManager : MonoBehaviour {
         Panel2.gameObject.SetActive(false);
         Panel3.gameObject.SetActive(false);
         Panel4.gameObject.SetActive(false);
+        Panel11.gameObject.SetActive(true);
+        Panel22.gameObject.SetActive(true);
+        Panel33.gameObject.SetActive(true);
+        Panel44.gameObject.SetActive(true);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        Panel1.gameObject.SetActive(player1.ControllerConnected);
-        Panel2.gameObject.SetActive(player2.ControllerConnected);
-        Panel3.gameObject.SetActive(player3.ControllerConnected);
-        Panel4.gameObject.SetActive(player4.ControllerConnected);
+        if(player1.ControllerConnected)
+        {
+            Panel11.gameObject.SetActive(false);
+            Panel1.gameObject.SetActive(true);
+        }
+
+        if (player2.ControllerConnected)
+        {
+            Panel22.gameObject.SetActive(false);
+            Panel2.gameObject.SetActive(true);
+        }
+
+        if (player3.ControllerConnected)
+        {
+            Panel33.gameObject.SetActive(false);
+            Panel3.gameObject.SetActive(true);
+        }
+
+        if (player4.ControllerConnected)
+        {
+            Panel44.gameObject.SetActive(false);
+            Panel4.gameObject.SetActive(true);
+        }
+        
     }
 }
