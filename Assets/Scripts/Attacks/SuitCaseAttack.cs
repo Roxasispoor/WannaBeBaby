@@ -55,7 +55,7 @@ public class SuitCaseAttack : Attack {
         {
             if (collision.GetComponent<AudioSource>() != null && hittingSound != null)
             {
-                GetComponent<AudioSource>().PlayOneShot(hittingSound);
+                collision.GetComponent<AudioSource>().PlayOneShot(hittingSound);
             }
             if(collision.gameObject.GetComponent<Character>())
             { 
