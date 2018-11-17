@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  target: {fileID: 0}
+  target: {fileID: 1951318572836538}
   age: 30
   isLocked: 0
   forms:

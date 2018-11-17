@@ -23,6 +23,8 @@ public class Character : MonoBehaviour {
     void Start()
     {
         aimDirection = new Vector2(1, 0);
+        target.transform.localPosition = aimDirection/1.5f;
+        target.GetComponent<SpriteRenderer>().material.color = new Color(player.color.r, player.color.g, player.color.b);
         currentForm = forms[2];
     }
 
@@ -177,6 +179,6 @@ public class Character : MonoBehaviour {
         if (aim.magnitude < 0.5)
             return;
         aimDirection = aim.normalized;
-        target.transform.localPosition = aimDirection;
+        target.transform.localPosition = aimDirection/1.5f;
     }
 }

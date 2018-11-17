@@ -371,10 +371,6 @@ Prefab:
       propertyPath: m_Name
       value: Dummy_Character 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1951318572836538, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
-      propertyPath: m_Name
-      value: Target
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
   m_IsPrefabAsset: 0
