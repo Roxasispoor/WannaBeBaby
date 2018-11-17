@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class HurtBox : MonoBehaviour {
 
-    public InputManager input;
-    
+    private Collider2D collisionBox;
+    private Sprite sprite;
 
 	// Use this for initialization
 	void Start () {

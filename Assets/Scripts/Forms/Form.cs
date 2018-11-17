@@ -8,6 +8,7 @@ public abstract class Form : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private Collider2D hurtBox;
+    private float moveSpeed;
     public void UseSkill(int i,Character character)
     {
         if(i>0 && i<skills.Count)
@@ -38,6 +39,19 @@ public abstract class Form : MonoBehaviour {
         set
         {
             hurtBox = value;
+        }
+    }
+
+    public float MoveSpeed
+    {
+        get
+        {
+            return moveSpeed;
+        }
+
+        set
+        {
+            moveSpeed = value;
         }
     }
 

@@ -16,7 +16,6 @@ public class Character : MonoBehaviour {
     private List<Form> forms;         // 0-> baby  1->Teen  2->Adult  3->Old  4->Lich
     private Vector2 aimDirection;
     [SerializeField]
-    private float moveSpeed;          //Needs to change when form changes
 
 
     public int Age
@@ -72,24 +71,22 @@ public class Character : MonoBehaviour {
     }
 
 
-    public float MoveSpeed
-    {
-        get
-        {
-            return moveSpeed;
-        }
-
-        set
-        {
-            moveSpeed = value;
-        }
-    }
-
-
     // Update is called once per frame
     void LateUpdate () {
-		
+	    /*
+         * Assign AimDirection
+         * Check use of skill from inputs
+         * move based on joystick and speedMove
+         * check colisions (triggers)
+         *
+         */
+
 	}
+
+    public void TakeDamage(int damage)
+    {
+        age += damage;
+    }
 
     public void changeForm(int id)
     {

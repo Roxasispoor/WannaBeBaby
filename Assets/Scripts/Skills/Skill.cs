@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Skill : MonoBehaviour {
+
+    public float damage;
     public float cooldown;
     public float lastTimedUsed;
     public string triggerName;
