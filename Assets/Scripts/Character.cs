@@ -6,6 +6,8 @@ public class Character : MonoBehaviour {
 
     public Player player;
     [SerializeField]
+    private GameObject target;
+    [SerializeField]
     private int age;
     public bool isLocked = false;
     private Form currentForm;
@@ -175,5 +177,6 @@ public class Character : MonoBehaviour {
         if (aim.magnitude < 0.5)
             return;
         aimDirection = aim.normalized;
+        target.transform.localPosition = aimDirection;
     }
 }
