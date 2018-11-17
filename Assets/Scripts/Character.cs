@@ -5,13 +5,13 @@ using UnityEngine;
 public class Character : MonoBehaviour {
 
     public Player player;
-    public GameObject gameObjectPlayer;
     [SerializeField]
     private int age;
-
+    public bool isLocked = false;
     private Form currentForm;
     [SerializeField]
     private List<Form> forms;         // 0-> baby  1->Teen  2->Adult  3->Old  4->Lich
+    [SerializeField]
     private Vector2 aimDirection;
 
     public float speed = 10;
@@ -22,7 +22,6 @@ public class Character : MonoBehaviour {
     {
         aimDirection = new Vector2(1, 0);
         currentForm = forms[2];
-        player = gameObjectPlayer.GetComponent<Player>();   
     }
 
     public int Age
@@ -79,6 +78,16 @@ public class Character : MonoBehaviour {
 
     void Update()
     {
+        if(!isLocked)
+        { 
+        Movement();
+        UpdateAim();
+
+        if (player.input.bumpRight)
+        {
+            currentForm.UseSkill(0, this);
+        }
+
         //Debug
         if (Input.GetKeyDown("a"))
         {
@@ -88,6 +97,7 @@ public class Character : MonoBehaviour {
         if (Input.GetKeyDown("z"))
         {
             currentForm.UseSkill(0, this);
+        }
         }
     }
     // Update is called once per frame
@@ -146,7 +156,24 @@ public class Character : MonoBehaviour {
 
     public void Movement()
     {
+        Vector2 oldMovement = GetComponent<Rigidbody2D>().velocity;
         Vector2 movement = new Vector2(player.input.leftHorizontal, player.input.leftVertical);
-        GetComponent<Rigidbody2D>().velocity = movement.normalized;
+        GetComponent<Rigidbody2D>().velocity = movement.normalized * speed;
+        if(movement.x<0)//signs differents change sprite
+        {
+            GetComponent<SpriteRenderer>().flipX=true;
+        }
+        else if(movement.x > 0)//signs differents change sprite
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+    }
+
+    public void UpdateAim()
+    {
+        Vector2 aim = new Vector2(player.input.rightHorizontal, player.input.rightVertical);
+        if (aim.magnitude < 0.5)
+            return;
+        aimDirection = aim.normalized;
     }
 }
