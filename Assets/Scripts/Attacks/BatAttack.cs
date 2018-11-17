@@ -10,7 +10,7 @@ public class BatAttack : Attack {
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<AudioSource>() != null)
+        if (collision.GetComponent<AudioSource>() != null && hittingSound != null)
         {
             GetComponent<AudioSource>().PlayOneShot(hittingSound);
         }
