@@ -9,12 +9,17 @@ public class Skill : MonoBehaviour {
     public string triggerName;
     public GameObject prefabToInstanciate;
     public float spawnRange;
-    
+    public AudioClip skillSound;
+
     public void Use(Character character)
     {
         GameObject attack = Instantiate(prefabToInstanciate, new Vector3(character.transform.position.x + spawnRange * character.AimDirection.x,
             character.transform.position.y + spawnRange * character.AimDirection.y), Quaternion.identity);
         attack.GetComponent<Attack>().direction = character.AimDirection;
         attack.GetComponent<Attack>().character = gameObject.GetComponent<Character>();
+        if (GetComponent<AudioSource>()!=null)
+        { 
+        GetComponent<AudioSource>().PlayOneShot(skillSound);
+        }
     }
 }
