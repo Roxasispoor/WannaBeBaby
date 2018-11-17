@@ -41,13 +41,13 @@ public class PlayerInput : MonoBehaviour {
         bumpLeft = Input.GetButton("J" + controllerNumber + "BumpLeft");
         bumpRight = Input.GetButton("J" + controllerNumber + "BumpRight");
         TriggerRight = false;
-        TriggerRight = true;
+        TriggerRight = false;
         if (Input.GetAxis("J" + controllerNumber + "Triggers") < -0.5f)
         {
             TriggerLeft = true;
         } else if (Input.GetAxis("J" + controllerNumber + "Triggers") > 0.5f)
         {
-            TriggerLeft = false;
+            TriggerRight = true;
         }
 
 
