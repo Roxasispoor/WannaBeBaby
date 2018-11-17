@@ -2,10 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Form : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+public abstract class Form : MonoBehaviour {
+    [SerializeField]
+    private List<Skill> skills;
+    public void UseSkill(int i)
+    {
+        if(i>0 && i<skills.Count)
+        {
+            skills[i].Use();
+        }
+        else
+        {
+            Debug.Log("Skill to use not in range");
+        }
+    }
+    
+    void Start () {
 		
 	}
 
