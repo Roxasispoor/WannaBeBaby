@@ -8,7 +8,10 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		
 	}
-	
+
+    List<Character> characters;
+    List<Player> players;
+
 	// Update is called once per frame
 	void Update () {
 		
