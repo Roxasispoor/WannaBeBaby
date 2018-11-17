@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
-    
-    public PlayerInput input;
+public class HurtBox : MonoBehaviour {
+
+    private Collider2D collisionBox;
+    private Sprite sprite;
 
 	// Use this for initialization
 	void Start () {
-        Debug.Assert(input != null);
+		
 	}
 	
 	// Update is called once per frame

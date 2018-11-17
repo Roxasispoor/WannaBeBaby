@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FormLich : MonoBehaviour {
+public class FormLich : Form {
 
 	// Use this for initialization
 	void Start () {
