@@ -109,7 +109,6 @@ public class Character : MonoBehaviour {
     }
     public void CheckAndChangeForm()
     {
-        int nbFound = forms.FindIndex(currentForm.Equals);
         if (age<=10  && (currentForm==null || forms.FindIndex(currentForm.Equals)!=0))
         {
             ChangeForm(0);

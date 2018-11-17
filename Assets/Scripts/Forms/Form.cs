@@ -64,6 +64,6 @@ public class Form : MonoBehaviour {
     // Update is called once per frame
     private void Update()
     {
-        animator.SetFloat("Speed", moveSpeed);
+        //animator.SetFloat("Speed", moveSpeed);
     }
 }
