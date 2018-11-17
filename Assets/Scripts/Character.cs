@@ -11,6 +11,7 @@ public class Character : MonoBehaviour {
     private Form currentForm;
     [SerializeField]
     private List<Form> forms;         // 0-> baby  1->Teen  2->Adult  3->Old  4->Lich
+    [SerializeField]
     private Vector2 aimDirection;
 
     public float speed = 10;
@@ -167,6 +168,8 @@ public class Character : MonoBehaviour {
     public void UpdateAim()
     {
         Vector2 aim = new Vector2(player.input.rightHorizontal, player.input.rightVertical);
+        if (aim.magnitude < 0.5)
+            return;
         aimDirection = aim.normalized;
     }
 }
