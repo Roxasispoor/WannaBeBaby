@@ -177,6 +177,31 @@ Prefab:
       propertyPath: hurtBox
       value: 
       objectReference: {fileID: 1143728041}
+    - target: {fileID: 114977296249244408, guid: efe0245de11abd04e893b55fc6c39549,
+        type: 2}
+      propertyPath: label
+      value: Baby
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718669890836016, guid: efe0245de11abd04e893b55fc6c39549,
+        type: 2}
+      propertyPath: label
+      value: Teen
+      objectReference: {fileID: 0}
+    - target: {fileID: 114531526891070288, guid: efe0245de11abd04e893b55fc6c39549,
+        type: 2}
+      propertyPath: label
+      value: Adult
+      objectReference: {fileID: 0}
+    - target: {fileID: 114344639433843230, guid: efe0245de11abd04e893b55fc6c39549,
+        type: 2}
+      propertyPath: label
+      value: Old
+      objectReference: {fileID: 0}
+    - target: {fileID: 114457697117104864, guid: efe0245de11abd04e893b55fc6c39549,
+        type: 2}
+      propertyPath: label
+      value: Lich
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
   m_IsPrefabAsset: 0

@@ -7,6 +7,7 @@ public class Form : MonoBehaviour {
     [SerializeField]
     private List<Skill> skills;
     private SpriteRenderer spriteRenderer;
+    [SerializeField]
     private Animator animator;
     [SerializeField]
     private Collider2D hurtBox;
