@@ -190,7 +190,7 @@ public class Character : MonoBehaviour {
         CurrentForm = Forms[id];
         GameObject newItem=Instantiate(EffectToMorph, transform);
         GetComponent<Animator>().runtimeAnimatorController = Forms[id].animatorController;
-        currentForm.HurtBox.gameObject.SetActive(true);
+        currentForm.HurtBox.enabled=true;
         isLocked = true;
         timeEndLock = Time.fixedTime + morphingTime;
         isInvincible = true;

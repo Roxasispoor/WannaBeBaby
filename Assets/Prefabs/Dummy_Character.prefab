@@ -36,7 +36,6 @@ GameObject:
   - component: {fileID: 95783463626115892}
   - component: {fileID: 50839127806647972}
   - component: {fileID: 70165749339645918}
-  - component: {fileID: 70102844285541384}
   m_Layer: 9
   m_Name: Dummy_Character
   m_TagString: Player1
@@ -122,21 +121,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.27, y: 0.7}
   m_Direction: 0
---- !u!70 &70102844285541384
-CapsuleCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1437441907089566}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.6, y: 0.41}
-  m_Direction: 1
 --- !u!70 &70165749339645918
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -479,7 +463,7 @@ MonoBehaviour:
   - {fileID: 114052624881771606}
   - {fileID: 114222087844346274}
   animatorController: {fileID: 9100000, guid: e0a307ffac86b6b47b182a75aa728bfa, type: 2}
-  hurtBox: {fileID: 70102844285541384}
+  hurtBox: {fileID: 70165749339645918}
   moveSpeed: 9
 --- !u!212 &212227976141193602
 SpriteRenderer:
