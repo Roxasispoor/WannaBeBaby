@@ -386,6 +386,10 @@ MonoBehaviour:
   speed: 10
   isInvincible: 0
   colliders: []
+  blinkingTime: 0.5
+  EffectToMorph: {fileID: 1736329956517870, guid: 41df707d678b4074a876b5202d93be66,
+    type: 2}
+  morphingTime: 0.5
 --- !u!114 &114692917317072286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -437,8 +441,9 @@ MonoBehaviour:
   cooldown: 2
   lastTimedUsed: 0
   triggerName: IsShooting
-  prefabToInstanciate: {fileID: 0}
-  spawnRange: 1
+  prefabToInstanciate: {fileID: 1609202068463172, guid: fb93f20fa5f41fe4db38a9638125ecb7,
+    type: 2}
+  spawnRange: 0.4
   timeAnimation: 0.8
   skillSound: {fileID: 8300000, guid: e0eff6ad0c6c1164abb619b841c2bf09, type: 3}
   attackLocksCaster: 0
@@ -542,7 +547,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.9315478, b: 0.3254717, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
