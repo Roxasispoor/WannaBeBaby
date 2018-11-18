@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour {
         if (timer != null && timer.IsFinished)
         {
             horn.enabled = true;
+            horn.Play();
             Player Save = players[0];
             int saveAge = 90;
             foreach (Character character in characters)
@@ -61,7 +62,6 @@ public class GameManager : MonoBehaviour {
                     saveAge = character.Age;
                     character.isLocked = true;
                     character.timeEndLock = Time.fixedTime + 120;
-
                 }
             }
             winner = Save;
