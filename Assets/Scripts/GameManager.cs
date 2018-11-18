@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
@@ -13,6 +14,8 @@ public class GameManager : MonoBehaviour {
     public UIManager[] UIBatchs;
     public GameObject characterPrefab;
     public Timer timer;
+    private Player winner;
+    public Text specialText;
 
     public static GameManager Instance
     {
@@ -39,6 +42,25 @@ public class GameManager : MonoBehaviour {
         
     }
 
+    private void Update()
+    {
+        if (timer.IsFinished)
+        {
+            Player Save = players[0];
+            int saveAge = 90;
+            foreach (Character character in characters)
+            {
+                if (character.Age < saveAge)
+                {
+                    Save = character.player;
+                    saveAge = character.Age;
+                }
+            }
+            winner = Save;
+            specialText.text = "Winner : Player" + winner.ID + "He is " + saveAge.ToString() + "/n Press Start to Restart";
+        }
+    }
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += InitializeMainScene;
@@ -50,6 +72,7 @@ public class GameManager : MonoBehaviour {
         {
             Canva = GameObject.Find("UI").GetComponent<Canvas>();
             timer = GameObject.Find("Timer").GetComponent<Timer>();
+            specialText = GameObject.Find("SpecialText").GetComponent<Text>();
             GameObject[] UIBatchs = GameObject.FindGameObjectsWithTag("UIBatch");
             foreach (GameObject gameObject in UIBatchs)
             {
