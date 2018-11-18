@@ -113,31 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &50985679 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1437441907089566, guid: efe0245de11abd04e893b55fc6c39549,
-    type: 2}
-  m_PrefabInternal: {fileID: 768274921}
---- !u!70 &50985694
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 50985679}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.6, y: 0.41}
-  m_Direction: 1
---- !u!70 &50985698 stripped
-CapsuleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 70007749740301338, guid: efe0245de11abd04e893b55fc6c39549,
-    type: 2}
-  m_PrefabInternal: {fileID: 768274921}
 --- !u!1001 &255898486
 Prefab:
   m_ObjectHideFlags: 0
@@ -387,23 +362,7 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 544799588}
-    - target: {fileID: 114977296249244408, guid: efe0245de11abd04e893b55fc6c39549,
-        type: 2}
-      propertyPath: hurtBox
-      value: 
-      objectReference: {fileID: 50985694}
-    - target: {fileID: 114718669890836016, guid: efe0245de11abd04e893b55fc6c39549,
-        type: 2}
-      propertyPath: hurtBox
-      value: 
-      objectReference: {fileID: 50985698}
-    - target: {fileID: 70007749740301338, guid: efe0245de11abd04e893b55fc6c39549,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &977209629

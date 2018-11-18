@@ -27,7 +27,9 @@ public class Character : MonoBehaviour {
     void Start()
     {
         aimDirection = new Vector2(1, 0);
-        target.transform.localPosition = aimDirection / 1.5f;
+        target.transform.localPosition = aimDirection / 1.8f;
+        
+        target.transform.localRotation = Quaternion.FromToRotation(Vector3.up, new Vector3(AimDirection.x, AimDirection.y));
         target.GetComponent<SpriteRenderer>().material.color = new Color(player.color.r, player.color.g, player.color.b);
         currentForm = forms[2];
         colliders = gameObject.GetComponents<CapsuleCollider2D>();
@@ -236,6 +238,7 @@ public class Character : MonoBehaviour {
         if (aim.magnitude < 0.5)
             return;
         aimDirection = aim.normalized;
-        target.transform.localPosition = aimDirection/1.5f;
+        target.transform.localPosition = aimDirection/1.8f;
+        target.transform.localRotation = Quaternion.FromToRotation(Vector3.up, new Vector3(AimDirection.x, AimDirection.y));
     }
 }
