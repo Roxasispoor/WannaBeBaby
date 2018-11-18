@@ -217,6 +217,7 @@ public class Character : MonoBehaviour {
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
+        GetComponent<Animator>().SetFloat("Speed", GetComponent<Rigidbody2D>().velocity.magnitude);
     }
     public void Unlock()
     {
