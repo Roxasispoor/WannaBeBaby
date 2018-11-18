@@ -20,7 +20,8 @@ public class Character : MonoBehaviour {
     public float speed = 10;
     public bool isInvincible = false;
     public float blinkingTime = 0.5f;
-
+    public GameObject EffectToMorph;
+    public float morphingTime = 0.5f;
     // Use this for initialization
     void Start()
     {
@@ -179,8 +180,20 @@ public class Character : MonoBehaviour {
 
         //launch animator for change of sprite
         CurrentForm = Forms[id];
+        GameObject newItem=Instantiate(EffectToMorph, transform);
         GetComponent<Animator>().runtimeAnimatorController = Forms[id].animatorController;
         currentForm.HurtBox.gameObject.SetActive(true);
+        isLocked = true;
+        timeEndLock = Time.fixedTime + morphingTime;
+        isInvincible = true;
+        StartCoroutine(DeleteMorphing(newItem));
+    }
+    public IEnumerator DeleteMorphing(GameObject newitem)
+    {
+        yield return new WaitForSeconds(morphingTime);
+        Destroy(newitem);
+        
+        isInvincible = false;
     }
 
     public void Movement()
