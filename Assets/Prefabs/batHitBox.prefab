@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212318439542483574}
   - component: {fileID: 70659931774210030}
   - component: {fileID: 114315970880841008}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: batHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1132767391756806}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -0.1730664, z: 0}
+  m_LocalPosition: {x: -3.8536117, y: -1.8897775, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,8 +54,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.17835292, y: 0.6369516}
+  m_Offset: {x: 0.18569104, y: -0.0148552265}
+  m_Size: {x: 0.54973507, y: 0.60724115}
   m_Direction: 0
 --- !u!114 &114315970880841008
 MonoBehaviour:
@@ -73,6 +73,7 @@ MonoBehaviour:
   startTime: 0
   character: {fileID: 0}
   direction: {x: 0, y: 0}
+  hittingSound: {fileID: 8300000, guid: af1809d3d48f22a41b082e469339cf6e, type: 3}
 --- !u!212 &212318439542483574
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -3,28 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DiapperAttack : Attack {
-    public float lockTime;
+    public float slowTime;
     void Start()
     {
         Init();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<AudioSource>() != null && hittingSound != null)
+       
+        if (collision.tag != character.tag && collision.GetComponent<Character>()!=null)
         {
-            GetComponent<AudioSource>().PlayOneShot(hittingSound);
-        }
-        if (collision.tag != character.tag)
-        {
+            if (collision.GetComponent<AudioSource>() != null && hittingSound != null)
+            {
+                collision.GetComponent<AudioSource>().PlayOneShot(hittingSound);
+            }
 
-            StartCoroutine(LockForSeconds(collision.gameObject.GetComponent<Character>()));
+            collision.GetComponent<Character>().timeEndSlow = Time.fixedTime + slowTime;
+            collision.GetComponent<Rigidbody2D>().velocity = collision.GetComponent<Rigidbody2D>().velocity/2;
+
         }
-    }
-    public IEnumerator LockForSeconds(Character character)
-    {
-        character.speed *= 0.5f;
-        yield return new WaitForSeconds(lockTime);
-        character.speed *= 2;
+        else
+        {
+            Debug.Log("auto hit!");
+        }
     }
     // Update is called once per frame
     void Update()

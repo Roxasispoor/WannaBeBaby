@@ -11,7 +11,7 @@ public class Skill : MonoBehaviour {
     public float spawnRange;
     public float timeAnimation;
     public AudioClip skillSound;
-
+    public bool attackLocksCaster;
     public void Use(Character character)
     {
         GameObject attack = Instantiate(prefabToInstanciate, new Vector3(character.transform.position.x + spawnRange * character.AimDirection.x,
@@ -24,10 +24,17 @@ public class Skill : MonoBehaviour {
         { 
         GetComponent<AudioSource>().PlayOneShot(skillSound);
         }
-        StartCoroutine(WaitAndStopAnimation());
+        if (attackLocksCaster)
+        {
+            character.isLocked = true;
+            character.timeEndLock = Time.fixedTime + timeAnimation;
+            character.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        }
+        StartCoroutine(WaitAndStopAnimation(character));
     }
-    private IEnumerator WaitAndStopAnimation()
+    private IEnumerator WaitAndStopAnimation(Character character)
     {
+       
         float startTime = Time.fixedTime;
         while(Time.fixedTime-startTime<timeAnimation)
         {

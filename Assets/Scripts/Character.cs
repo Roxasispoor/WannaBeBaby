@@ -15,9 +15,10 @@ public class Character : MonoBehaviour {
     private List<Form> forms;         // 0-> baby  1->Teen  2->Adult  3->Old  4->Lich
     [SerializeField]
     private Vector2 aimDirection;
-
+    public float timeEndLock;
+    public float timeEndSlow;
     public float speed = 10;
-
+    public bool isInvincible=false;
 
     // Use this for initialization
     void Start()
@@ -82,6 +83,10 @@ public class Character : MonoBehaviour {
 
     void Update()
     {
+        if(Time.fixedTime>timeEndLock)
+        {
+            isLocked = false;
+        }
         if(!isLocked)
         { 
         Movement();
@@ -91,9 +96,13 @@ public class Character : MonoBehaviour {
         {
             currentForm.UseSkill(0, this);
         }
+        if (player.input.bumpLeft)
+         {
+            currentForm.UseSkill(1, this);
+         }
 
-        //Debug
-        if (Input.GetKeyDown("a"))
+            //Debug
+            if (Input.GetKeyDown("a"))
         {
             TakeDamage(-5);
             Debug.Log(currentForm.label);
@@ -119,9 +128,11 @@ public class Character : MonoBehaviour {
 
     public void TakeDamage(int damage)
     {
-        
+        if(!isInvincible)
+        { 
         age += damage;
         CheckAndChangeForm();
+        }
     }
     public void CheckAndChangeForm()
     {
@@ -162,8 +173,16 @@ public class Character : MonoBehaviour {
     {
         Vector2 oldMovement = GetComponent<Rigidbody2D>().velocity;
         Vector2 movement = new Vector2(player.input.leftHorizontal, player.input.leftVertical);
-        GetComponent<Rigidbody2D>().velocity = movement.normalized * speed;
-        if(movement.x<0)//signs differents change sprite
+        if(timeEndSlow>Time.fixedTime)
+        {
+            GetComponent<Rigidbody2D>().velocity = movement.normalized * currentForm.moveSpeed/2;
+
+        }
+        else
+        { 
+        GetComponent<Rigidbody2D>().velocity = movement.normalized * currentForm.moveSpeed;
+        }
+        if (movement.x<0)//signs differents change sprite
         {
             GetComponent<SpriteRenderer>().flipX=true;
         }
@@ -171,6 +190,10 @@ public class Character : MonoBehaviour {
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
+    }
+    public void Unlock()
+    {
+        isLocked = false;
     }
 
     public void UpdateAim()

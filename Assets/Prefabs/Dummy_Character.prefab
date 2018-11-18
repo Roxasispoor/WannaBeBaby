@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 114666877912723858}
   - component: {fileID: 114429396759820730}
   - component: {fileID: 114692917317072286}
+  - component: {fileID: 114052624881771606}
+  - component: {fileID: 114222087844346274}
   - component: {fileID: 114977296249244408}
   - component: {fileID: 114718669890836016}
   - component: {fileID: 114531526891070288}
@@ -32,9 +34,9 @@ GameObject:
   - component: {fileID: 82285963200965808}
   - component: {fileID: 95783463626115892}
   - component: {fileID: 50839127806647972}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dummy_Character
-  m_TagString: Player2
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +113,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -230,6 +232,46 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114052624881771606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437441907089566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73928cfc9986ce6419088e16bb8f33c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 3
+  lastTimedUsed: 0
+  triggerName: UseShield
+  prefabToInstanciate: {fileID: 1856369924560656, guid: cf5dcedbed18ee04091295d2035620c3,
+    type: 2}
+  spawnRange: 0
+  timeAnimation: 1
+  skillSound: {fileID: 8300000, guid: 078f194605b393f458756694c61503f1, type: 3}
+  attackLocksCaster: 1
+--- !u!114 &114222087844346274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437441907089566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73928cfc9986ce6419088e16bb8f33c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0.3
+  lastTimedUsed: 0
+  triggerName: IsFarting
+  prefabToInstanciate: {fileID: 1808365180971200, guid: 899bbd73ee4c00742bb43311688a3327,
+    type: 2}
+  spawnRange: 0
+  timeAnimation: 0
+  skillSound: {fileID: 8300000, guid: 9dcecda700395e0479a24f34b7dd98fa, type: 3}
+  attackLocksCaster: 0
 --- !u!114 &114344639433843230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,7 +287,7 @@ MonoBehaviour:
   skills: []
   animatorController: {fileID: 0}
   hurtBox: {fileID: 70290436692533530}
-  moveSpeed: 0
+  moveSpeed: 9
 --- !u!114 &114429396759820730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -257,14 +299,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73928cfc9986ce6419088e16bb8f33c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.5
+  cooldown: 1
   lastTimedUsed: 0
-  triggerName: Batte
+  triggerName: IsHitting
   prefabToInstanciate: {fileID: 1132767391756806, guid: 1d480ca76c5ec434dad2250225db2a42,
     type: 2}
   spawnRange: 1
-  timeAnimation: 0.3
-  skillSound: {fileID: 0}
+  timeAnimation: 0.5
+  skillSound: {fileID: 8300000, guid: 34d79101c6a7289428620f42e63b0194, type: 3}
+  attackLocksCaster: 0
 --- !u!114 &114457697117104864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -280,7 +323,7 @@ MonoBehaviour:
   skills: []
   animatorController: {fileID: 0}
   hurtBox: {fileID: 70290436692533530}
-  moveSpeed: 0
+  moveSpeed: 7
 --- !u!114 &114531526891070288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -297,7 +340,7 @@ MonoBehaviour:
   - {fileID: 114692917317072286}
   animatorController: {fileID: 9100000, guid: 46fa7c0a7a1d0b54abfb9eea121e45b0, type: 2}
   hurtBox: {fileID: 70290436692533530}
-  moveSpeed: 0
+  moveSpeed: 10
 --- !u!114 &114666877912723858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,7 +363,10 @@ MonoBehaviour:
   - {fileID: 114344639433843230}
   - {fileID: 114457697117104864}
   aimDirection: {x: 0, y: 0}
+  timeEndLock: 0
+  timeEndSlow: 0
   speed: 10
+  isInvincible: 0
 --- !u!114 &114692917317072286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,12 +380,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1
   lastTimedUsed: 0
-  triggerName: Case
+  triggerName: IsHitting
   prefabToInstanciate: {fileID: 1025970895093650, guid: 0cc247a5206e5c54c9acd9c336f1dfae,
     type: 2}
   spawnRange: 1
   timeAnimation: 0.3
-  skillSound: {fileID: 0}
+  skillSound: {fileID: 8300000, guid: 92d45f29ab392ff4497f0c93dcb1ca97, type: 3}
+  attackLocksCaster: 0
 --- !u!114 &114718669890836016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -356,7 +403,7 @@ MonoBehaviour:
   - {fileID: 114429396759820730}
   animatorController: {fileID: 9100000, guid: 8c82fa7e7488fb046b3b52e0c2f2999f, type: 2}
   hurtBox: {fileID: 70290436692533530}
-  moveSpeed: 0
+  moveSpeed: 12
 --- !u!114 &114977296249244408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -369,10 +416,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: Baby
-  skills: []
-  animatorController: {fileID: 0}
+  skills:
+  - {fileID: 114052624881771606}
+  - {fileID: 114222087844346274}
+  animatorController: {fileID: 9100000, guid: e0a307ffac86b6b47b182a75aa728bfa, type: 2}
   hurtBox: {fileID: 70290436692533530}
-  moveSpeed: 0
+  moveSpeed: 9
 --- !u!212 &212227976141193602
 SpriteRenderer:
   m_ObjectHideFlags: 1

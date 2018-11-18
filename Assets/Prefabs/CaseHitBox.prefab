@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50292515602705378}
   - component: {fileID: 61830909996450016}
   - component: {fileID: 95290543416612532}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CaseHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ MonoBehaviour:
   startTime: 0
   character: {fileID: 0}
   direction: {x: 0, y: 0}
-  hittingSound: {fileID: 0}
+  hittingSound: {fileID: 8300000, guid: 1b591c65ba9e6a146b21fc63aaf02b0e, type: 3}
   range: 8
   maxSpeed: 10
   state: 0
