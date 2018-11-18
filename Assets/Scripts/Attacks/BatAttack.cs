@@ -18,7 +18,10 @@ public class BatAttack : Attack {
                 collision.GetComponent<AudioSource>().PlayOneShot(hittingSound);
             }
             collision.gameObject.GetComponent<Character>().TakeDamage(damage);
-            character.TakeDamage(-damage);
+            if (!collision.gameObject.GetComponent<Character>().isInvincible)
+            {
+                character.TakeDamage(-damage);
+            }
         }
     }
     // Update is called once per frame
