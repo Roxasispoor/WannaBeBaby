@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour {
                 }
             }
             winner = Save;
-            specialText.text = "Winner : Player" + winner.ID + "He is " + saveAge.ToString() + "/n Press Start to Restart";
+            specialText.text = "Winner : Player" + winner.ID + "\n He is " + saveAge.ToString() + "\n Press Start to Restart";
         }
     }
 
