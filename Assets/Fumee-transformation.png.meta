@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 19d78eaff9d87d74d9cd3a780acc34d5
+guid: 7f2728081a2997e4aa295e86803d4830
 TextureImporter:
   fileIDToRecycleName:
-    21300000: "Fum\xE9e transformation_0"
-    21300002: "Fum\xE9e transformation_1"
-    21300004: "Fum\xE9e transformation_2"
-    21300006: "Fum\xE9e transformation_3"
-    21300008: "Fum\xE9e transformation_4"
-    21300010: "Fum\xE9e transformation_5"
-    21300012: "Fum\xE9e transformation_6"
-    21300014: "Fum\xE9e transformation_7"
-    21300016: "Fum\xE9e transformation_8"
-=======
-guid: 39a0bb383ceb11e49959a53d1810e2b3
-TextureImporter:
-  fileIDToRecycleName: {}
->>>>>>> 463eea6d68e12e0dbaaa86f6d12bfe5d320835dd
+    21300000: Fumee-transformation_0
+    21300002: Fumee-transformation_1
+    21300004: Fumee-transformation_2
+    21300006: Fumee-transformation_3
+    21300008: Fumee-transformation_4
+    21300010: Fumee-transformation_5
+    21300012: Fumee-transformation_6
+    21300014: Fumee-transformation_7
+    21300016: Fumee-transformation_8
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -55,11 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
   spriteMode: 2
-=======
-  spriteMode: 1
->>>>>>> 463eea6d68e12e0dbaaa86f6d12bfe5d320835dd
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -88,7 +78,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-<<<<<<< HEAD
   - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -104,7 +93,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Fum\xE9e transformation_0"
+      name: Fumee-transformation_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,13 +107,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81b569dd0e279bf48b12cd0cd722fb8f
+      spriteID: 20b9d7a707074484683fc36daf3961a6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Fum\xE9e transformation_1"
+      name: Fumee-transformation_1
       rect:
         serializedVersion: 2
         x: 130
@@ -138,13 +127,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21b5b7945805f334bba272af4972f406
+      spriteID: 8af16540a2a3dbe4eb8018848b3e96e8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Fum\xE9e transformation_2"
+      name: Fumee-transformation_2
       rect:
         serializedVersion: 2
         x: 260
@@ -158,13 +147,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 006f6917b7398a044aa602a96df6768e
+      spriteID: c8cc43ea47372674e8a4221daf6b069d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Fum\xE9e transformation_3"
+      name: Fumee-transformation_3
       rect:
         serializedVersion: 2
         x: 390
@@ -178,13 +167,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdcd9dd2337c9a84db88df1a80bfc196
+      spriteID: 05399ca67480f89429dabe1b77ecaa53
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Fum\xE9e transformation_4"
+      name: Fumee-transformation_4
       rect:
         serializedVersion: 2
         x: 520
@@ -198,13 +187,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8539239fc8988c5469a875b0357dea2a
+      spriteID: 18c7153a9ca0aed4dad9085af036de2e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Fum\xE9e transformation_5"
+      name: Fumee-transformation_5
       rect:
         serializedVersion: 2
         x: 650
@@ -218,13 +207,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4898a53476f7f104e9bfaeb26791c358
+      spriteID: 2d97450e4b933ca4cb927b810040efa3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Fum\xE9e transformation_6"
+      name: Fumee-transformation_6
       rect:
         serializedVersion: 2
         x: 780
@@ -238,13 +227,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4edff3a36fa05834b946dcc6b27f5d2e
+      spriteID: 64e65441282fb5c4d955bfe271cf4687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Fum\xE9e transformation_7"
+      name: Fumee-transformation_7
       rect:
         serializedVersion: 2
         x: 910
@@ -258,13 +247,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53e14791998283a44a9b4ad606cec02b
+      spriteID: 81b8f72d00cc5ff4296c7794a86109e3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Fum\xE9e transformation_8"
+      name: Fumee-transformation_8
       rect:
         serializedVersion: 2
         x: 1040
@@ -278,7 +267,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d28368fa3503c0419a96b8ff2968151
+      spriteID: b738bb3af7c2b9944a80ec04241c105e
       vertices: []
       indices: 
       edges: []
@@ -286,16 +275,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f4f3b955d75df0b459aaaa77c18a575f
-=======
-  spriteSheet:
-    serializedVersion: 2
-    sprites: []
-    outline: []
-    physicsShape: []
-    bones: []
-    spriteID: 5d7f9c5831480e049a37a319e572b345
->>>>>>> 463eea6d68e12e0dbaaa86f6d12bfe5d320835dd
+    spriteID: d8ad5fe4c1519d94c83f2a2bbadff6b4
     vertices: []
     indices: 
     edges: []
