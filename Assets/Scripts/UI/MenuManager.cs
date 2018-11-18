@@ -32,12 +32,12 @@ public class MenuManager : MonoBehaviour {
         Panel33.gameObject.SetActive(true);
         Panel44.gameObject.SetActive(true);
     }
-    private void FlipSound()
+    public void FlipSound()
     {
-        AudioListener.pause = !AudioListener.pause;
-        enabledSound.enabled = !enabledSound.enabled;
-        disabledSound.enabled = !disabledSound.enabled;
         
+        enabledSound.gameObject.SetActive(!enabledSound.gameObject.activeSelf);
+        disabledSound.gameObject.SetActive(!disabledSound.gameObject.activeSelf);
+        GameManager.Instance.FlipSound();
     }
 	
 	// Update is called once per frame
