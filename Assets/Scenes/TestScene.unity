@@ -357,10 +357,19 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 544799588}
-    - target: {fileID: 114862317423376016, guid: efe0245de11abd04e893b55fc6c39549,
+    - target: {fileID: 212227976141193602, guid: efe0245de11abd04e893b55fc6c39549,
         type: 2}
-      propertyPath: spawnRange
-      value: 0.4
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4d697b278a5ca9247ba8d0ea87ce6ea8,
+        type: 3}
+    - target: {fileID: 4556667516215504, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556667516215504, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
