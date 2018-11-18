@@ -24,7 +24,7 @@ public class Stun : Attack
             collision.GetComponent<Character>().isLocked = true;
             collision.GetComponent<Character>().timeEndLock = Time.fixedTime+stunTime;
             collision.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-          
+            Destroy(gameObject);
         }
         else
         {

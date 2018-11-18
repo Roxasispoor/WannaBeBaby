@@ -199,6 +199,12 @@ public class Character : MonoBehaviour {
         isInvincible = true;
         StartCoroutine(DeleteMorphing(newItem));
     }
+    public IEnumerator StopInvincible(float temps)
+    {
+        yield return new WaitForSeconds(morphingTime);
+        isInvincible = false;
+
+    }
     public IEnumerator DeleteMorphing(GameObject newitem)
     {
         yield return new WaitForSeconds(morphingTime);

@@ -36,6 +36,8 @@ GameObject:
   - component: {fileID: 95783463626115892}
   - component: {fileID: 50839127806647972}
   - component: {fileID: 70165749339645918}
+  - component: {fileID: 114736471905311410}
+  - component: {fileID: 114820604927431556}
   m_Layer: 9
   m_Name: Dummy_Character
   m_TagString: Player1
@@ -341,7 +343,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: Lich
-  skills: []
+  skills:
+  - {fileID: 114736471905311410}
+  - {fileID: 114820604927431556}
   animatorController: {fileID: 9100000, guid: 0757ab165a9bb5e41a9950c5da01edd9, type: 2}
   hurtBox: {fileID: 0}
   moveSpeed: 7
@@ -431,6 +435,48 @@ MonoBehaviour:
   animatorController: {fileID: 9100000, guid: 8c82fa7e7488fb046b3b52e0c2f2999f, type: 2}
   hurtBox: {fileID: 70007749740301338}
   moveSpeed: 12
+--- !u!114 &114736471905311410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437441907089566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73928cfc9986ce6419088e16bb8f33c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 5
+  lastTimedUsed: 0
+  triggerName: Cadeau
+  prefabToInstanciate: {fileID: 1685899854597386, guid: c1413311fb07f16448ac48dee547e2bb,
+    type: 2}
+  spawnRange: 0
+  timeAnimation: 0
+  skillSound: {fileID: 0}
+  attackLocksCaster: 0
+  blinkTime: 0.2
+--- !u!114 &114820604927431556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437441907089566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73928cfc9986ce6419088e16bb8f33c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 5
+  lastTimedUsed: 0
+  triggerName: Cadeau
+  prefabToInstanciate: {fileID: 1652726007739644, guid: 7c48533075dfb144185cc9b2cdd8be95,
+    type: 2}
+  spawnRange: 0
+  timeAnimation: 0
+  skillSound: {fileID: 0}
+  attackLocksCaster: 0
+  blinkTime: 0.2
 --- !u!114 &114862317423376016
 MonoBehaviour:
   m_ObjectHideFlags: 1
