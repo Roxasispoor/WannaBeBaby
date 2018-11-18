@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour {
     public Timer timer;
     private Player winner;
     public Text specialText;
+    public AudioSource horn;
+    public AudioSource MP;
+    public AudioClip MusiqueMenu;
+    public AudioClip MusiqueCombat;
 
     public static GameManager Instance
     {
@@ -39,7 +43,7 @@ public class GameManager : MonoBehaviour {
             Destroy(gameObject);
 
         DontDestroyOnLoad(this);
-        
+        MP.clip = MusiqueMenu;        
     }
     public void FlipSound()
     {
@@ -53,6 +57,7 @@ public class GameManager : MonoBehaviour {
     {
         if (timer != null && timer.IsFinished)
         {
+            horn.enabled = true;
             Player Save = players[0];
             int saveAge = 90;
             foreach (Character character in characters)
@@ -61,10 +66,18 @@ public class GameManager : MonoBehaviour {
                 {
                     Save = character.player;
                     saveAge = character.Age;
+                    character.isLocked = true;
+                    character.timeEndLock = Time.fixedTime + 120;
+
                 }
             }
             winner = Save;
             specialText.text = "Winner : Player" + winner.ID + "\n He is " + saveAge.ToString() + "\n Press Start to Restart";
+        }
+
+        if (Input.GetButton("StartGame") && timer != null && timer.IsFinished)
+        {
+            SceneManager.LoadScene("MainScene");
         }
     }
 
@@ -77,6 +90,9 @@ public class GameManager : MonoBehaviour {
     {
         if (scene.name.Contains("MainScene"))
         {
+            horn.enabled = false;
+            MP.clip = MusiqueCombat;
+            MP.Play();
             Canva = GameObject.Find("UI").GetComponent<Canvas>();
             timer = GameObject.Find("Timer").GetComponent<Timer>();
             specialText = GameObject.Find("SpecialText").GetComponent<Text>();
