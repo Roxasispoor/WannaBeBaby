@@ -113,6 +113,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &50985679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1437441907089566, guid: efe0245de11abd04e893b55fc6c39549,
+    type: 2}
+  m_PrefabInternal: {fileID: 768274921}
+--- !u!70 &50985694
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50985679}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.6, y: 0.41}
+  m_Direction: 1
+--- !u!70 &50985698 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 70007749740301338, guid: efe0245de11abd04e893b55fc6c39549,
+    type: 2}
+  m_PrefabInternal: {fileID: 768274921}
 --- !u!1001 &255898486
 Prefab:
   m_ObjectHideFlags: 0
@@ -171,6 +196,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1609202068463172, guid: fb93f20fa5f41fe4db38a9638125ecb7,
         type: 2}
+    - target: {fileID: 114531526891070288, guid: efe0245de11abd04e893b55fc6c39549,
+        type: 2}
+      propertyPath: hurtBox
+      value: 
+      objectReference: {fileID: 1075002278}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
   m_IsPrefabAsset: 0
@@ -357,7 +387,23 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 544799588}
-    m_RemovedComponents: []
+    - target: {fileID: 114977296249244408, guid: efe0245de11abd04e893b55fc6c39549,
+        type: 2}
+      propertyPath: hurtBox
+      value: 
+      objectReference: {fileID: 50985694}
+    - target: {fileID: 114718669890836016, guid: efe0245de11abd04e893b55fc6c39549,
+        type: 2}
+      propertyPath: hurtBox
+      value: 
+      objectReference: {fileID: 50985698}
+    - target: {fileID: 70007749740301338, guid: efe0245de11abd04e893b55fc6c39549,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &977209629
@@ -424,6 +470,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1075002278 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 70007749740301338, guid: efe0245de11abd04e893b55fc6c39549,
+    type: 2}
+  m_PrefabInternal: {fileID: 255898486}
 --- !u!1 &1132620088
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +562,7 @@ GameObject:
   - component: {fileID: 2041710120}
   - component: {fileID: 2041710119}
   - component: {fileID: 2041710121}
+  - component: {fileID: 2041710122}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -638,3 +690,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2041710122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2041710118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d8ca21402171a428a269f0e166a367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters: []
+  players: []
+  Canva: {fileID: 0}
+  UIBatchs: []
+  characterPrefab: {fileID: 0}
+  timer: {fileID: 0}

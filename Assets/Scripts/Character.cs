@@ -19,6 +19,7 @@ public class Character : MonoBehaviour {
     public float timeEndSlow;
     public float speed = 10;
     public bool isInvincible=false;
+    public CapsuleCollider2D[] colliders;
 
     // Use this for initialization
     void Start()
@@ -27,6 +28,12 @@ public class Character : MonoBehaviour {
         target.transform.localPosition = aimDirection/1.5f;
         target.GetComponent<SpriteRenderer>().material.color = new Color(player.color.r, player.color.g, player.color.b);
         currentForm = forms[2];
+        colliders = gameObject.GetComponents<CapsuleCollider2D>();
+        foreach (CapsuleCollider2D collider in colliders)
+        {
+            collider.enabled = false;
+        }
+        currentForm.HurtBox.enabled = true;
     }
 
     public int Age
@@ -161,12 +168,11 @@ public class Character : MonoBehaviour {
 
     public void ChangeForm(int id)
     {
-        currentForm.HurtBox.gameObject.SetActive(false);
-
+        currentForm.HurtBox.enabled = false;
         //launch animator for change of sprite
         CurrentForm = Forms[id];
         GetComponent<Animator>().runtimeAnimatorController = Forms[id].animatorController;
-        currentForm.HurtBox.gameObject.SetActive(true);
+        CurrentForm.HurtBox.enabled = true;
     }
 
     public void Movement()
