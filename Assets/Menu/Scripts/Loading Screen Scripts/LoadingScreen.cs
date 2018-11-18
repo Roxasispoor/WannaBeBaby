@@ -179,7 +179,7 @@ public class LoadingScreen : MonoBehaviour {
 
     private void Update()
     {
-        if(Input.GetKeyDown("space"))
+        if(Input.GetButtonDown("StartGame"))
                 loadScene();
     }
 
@@ -195,7 +195,7 @@ public class LoadingScreen : MonoBehaviour {
         //if it's null
         if (sceneToLoad == "")
         {
-            sceneToLoad = "TestScene";
+            sceneToLoad = "MainScene";
         }
 
 #else
