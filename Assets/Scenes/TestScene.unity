@@ -357,6 +357,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 544799588}
+    - target: {fileID: 114862317423376016, guid: efe0245de11abd04e893b55fc6c39549,
+        type: 2}
+      propertyPath: spawnRange
+      value: 0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
   m_IsPrefabAsset: 0

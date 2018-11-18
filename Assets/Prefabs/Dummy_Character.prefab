@@ -420,7 +420,8 @@ MonoBehaviour:
   cooldown: 2
   lastTimedUsed: 0
   triggerName: IsShooting
-  prefabToInstanciate: {fileID: 0}
+  prefabToInstanciate: {fileID: 1609202068463172, guid: fb93f20fa5f41fe4db38a9638125ecb7,
+    type: 2}
   spawnRange: 1
   timeAnimation: 0.8
   skillSound: {fileID: 8300000, guid: e0eff6ad0c6c1164abb619b841c2bf09, type: 3}
