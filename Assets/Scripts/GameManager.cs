@@ -84,8 +84,14 @@ public class GameManager : MonoBehaviour {
                 characters.Add(character);
                 character.player = players[i];
                 character.gameObject.tag = "Player" + players[i].ID;
-                UIBatchs[i].gameObject.SetActive(true);
-                UIBatchs[i].GetComponent<UIManager>().character = character;
+                for (int j = 0; j < UIBatchs.Length; j++)
+                {
+                    if (UIBatchs[j].name.Contains("P" + players[i].ID))
+                    {
+                        UIBatchs[j].gameObject.SetActive(true);
+                        UIBatchs[j].GetComponent<UIManager>().character = character;
+                    }
+                }
             }
         }
     }
