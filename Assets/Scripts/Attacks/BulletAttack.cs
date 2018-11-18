@@ -22,9 +22,9 @@ public class BulletAttack : Attack {
             }
             if (collision.gameObject.GetComponent<Character>())
             {
-                collision.gameObject.GetComponent<Character>().TakeDamage(damage);
-                if(!collision.gameObject.GetComponent<Character>().isInvincible)
+                if (!collision.gameObject.GetComponent<Character>().isInvincible)
                 {
+                    collision.gameObject.GetComponent<Character>().TakeDamage(damage);
                     character.TakeDamage(-damage);
                 }
              

@@ -17,9 +17,10 @@ public class BatAttack : Attack {
             {
                 collision.GetComponent<AudioSource>().PlayOneShot(hittingSound);
             }
-            collision.gameObject.GetComponent<Character>().TakeDamage(damage);
+            
             if (!collision.gameObject.GetComponent<Character>().isInvincible)
             {
+                collision.gameObject.GetComponent<Character>().TakeDamage(damage);
                 character.TakeDamage(-damage);
             }
         }
