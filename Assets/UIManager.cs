@@ -18,7 +18,10 @@ public class UIManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        slider.value = character.Age;
-        Age.text = character.Age.ToString();
+        if (character != null)
+        {
+            slider.value = character.Age;
+            Age.text = character.Age.ToString();
+        }
     }
 }

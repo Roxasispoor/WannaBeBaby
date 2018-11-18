@@ -38,8 +38,7 @@ public class Timer : MonoBehaviour
     }
 
     void Update()
-    {
-        Debug.Log(targetTime);
+    { 
         if (targetTime > 0)
 
         {

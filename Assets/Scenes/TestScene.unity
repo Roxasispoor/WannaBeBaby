@@ -515,6 +515,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1600895559 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1437441907089566, guid: efe0245de11abd04e893b55fc6c39549,
+    type: 2}
+  m_PrefabInternal: {fileID: 711977413}
 --- !u!1 &2041710118
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2041710120}
   - component: {fileID: 2041710119}
+  - component: {fileID: 2041710121}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -556,3 +562,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2041710121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2041710118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d8ca21402171a428a269f0e166a367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters: []
+  players: []
+  Canva: {fileID: 0}
+  UIBatchs: []
+  characterPrefab: {fileID: 1600895559}
+  timer: {fileID: 0}
