@@ -189,7 +189,7 @@ public class Character : MonoBehaviour {
         CurrentForm = Forms[id];
         GameObject newItem=Instantiate(EffectToMorph, transform);
         GetComponent<Animator>().runtimeAnimatorController = Forms[id].animatorController;
-        currentForm.HurtBox.enabled=true;
+        currentForm.HurtBox.enabled = true;
         isLocked = true;
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         timeEndLock = Time.fixedTime + morphingTime;
