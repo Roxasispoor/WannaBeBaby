@@ -5,7 +5,7 @@ using UnityEngine;
 public class ControllerDispatcher: MonoBehaviour {
 
     [SerializeField] 
-    private int numberControllerSupported;
+    private int numberControllerSupported = 7;
     private List<int> assignedController;
     private PlayerInput[] playerInputs;
 
@@ -18,8 +18,15 @@ public class ControllerDispatcher: MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         playerInputs = FindObjectsOfType<PlayerInput>();
+        PlayerInput[] temp = new PlayerInput[playerInputs.Length];
+        for (int i=0; i < temp.Length; i++)
+        {
+            Player player = playerInputs[i].GetComponent<Player>();
+            temp[player.ID - 1] = playerInputs[i];
+        }
+        playerInputs = temp;
         assignedController = new List<int>();
         Debug.Log("Player found: " + playerInputs.Length);
         Debug.Assert(numberControllerSupported > 0);
@@ -39,6 +46,8 @@ public class ControllerDispatcher: MonoBehaviour {
                         playerInputs[j].SetJoystickNumber(i);
                         Debug.Log("controller " + i + "set to " + playerInputs[j].gameObject.name);
                         assignedController.Add(i);
+                        GameManager.Instance.players.Add(playerInputs[j].GetComponent<Player>());
+                        DontDestroyOnLoad(playerInputs[j].gameObject);
                         break;
                     }
                 }

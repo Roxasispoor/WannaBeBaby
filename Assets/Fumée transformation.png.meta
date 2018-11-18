@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 19d78eaff9d87d74d9cd3a780acc34d5
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +12,11 @@ TextureImporter:
     21300012: "Fum\xE9e transformation_6"
     21300014: "Fum\xE9e transformation_7"
     21300016: "Fum\xE9e transformation_8"
+=======
+guid: 39a0bb383ceb11e49959a53d1810e2b3
+TextureImporter:
+  fileIDToRecycleName: {}
+>>>>>>> 463eea6d68e12e0dbaaa86f6d12bfe5d320835dd
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -49,7 +55,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> 463eea6d68e12e0dbaaa86f6d12bfe5d320835dd
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -78,6 +88,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+<<<<<<< HEAD
   - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -276,6 +287,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: f4f3b955d75df0b459aaaa77c18a575f
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5d7f9c5831480e049a37a319e572b345
+>>>>>>> 463eea6d68e12e0dbaaa86f6d12bfe5d320835dd
     vertices: []
     indices: 
     edges: []
