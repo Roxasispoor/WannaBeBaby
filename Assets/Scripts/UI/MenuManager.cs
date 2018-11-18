@@ -13,7 +13,8 @@ public class MenuManager : MonoBehaviour {
     public GameObject Panel22;
     public GameObject Panel33;
     public GameObject Panel44;
-
+    public Button enabledSound;
+    public Button disabledSound;
     public PlayerInput player1;
     public PlayerInput player2;
     public PlayerInput player3;
@@ -30,6 +31,13 @@ public class MenuManager : MonoBehaviour {
         Panel22.gameObject.SetActive(true);
         Panel33.gameObject.SetActive(true);
         Panel44.gameObject.SetActive(true);
+    }
+    private void FlipSound()
+    {
+        AudioListener.pause = !AudioListener.pause;
+        enabledSound.enabled = !enabledSound.enabled;
+        disabledSound.enabled = !disabledSound.enabled;
+        
     }
 	
 	// Update is called once per frame
