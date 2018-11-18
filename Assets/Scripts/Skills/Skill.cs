@@ -12,6 +12,7 @@ public class Skill : MonoBehaviour {
     public float timeAnimation;
     public AudioClip skillSound;
     public bool attackLocksCaster;
+    public float blinkTime = 0.2f;
     public void Use(Character character)
     {
         GameObject attack = Instantiate(prefabToInstanciate, new Vector3(character.transform.position.x + spawnRange * character.AimDirection.x,
@@ -31,6 +32,9 @@ public class Skill : MonoBehaviour {
             character.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         }
         StartCoroutine(WaitAndStopAnimation(character));
+
+        character.target.GetComponent<SpriteRenderer>().material.color = Color.white;
+        StartCoroutine(BlinkTarget(character));
     }
     private IEnumerator WaitAndStopAnimation(Character character)
     {
@@ -38,9 +42,23 @@ public class Skill : MonoBehaviour {
         float startTime = Time.fixedTime;
         while(Time.fixedTime-startTime<timeAnimation)
         {
+            if (character.AimDirection.x < 0)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else if (character.AimDirection.x > 0)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
             yield return null;
         }
         GetComponent<Animator>().SetBool(triggerName, false);
      
+    }
+    private IEnumerator BlinkTarget(Character character)
+    {
+        yield return new WaitForSeconds(blinkTime);
+        character.target.GetComponent<SpriteRenderer>().material.color = 
+            new Color(character.player.color.r, character.player.color.g, character.player.color.b);
     }
 }
