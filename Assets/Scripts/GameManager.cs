@@ -45,6 +45,13 @@ public class GameManager : MonoBehaviour {
         DontDestroyOnLoad(this);
         MP.clip = MusiqueMenu;        
     }
+    public void FlipSound()
+    {
+        AudioListener.pause = !AudioListener.pause;
+     
+        //GameManager.Instance.
+    }
+
 
     private void Update()
     {
