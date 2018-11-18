@@ -126,7 +126,7 @@ public class LoadingScreen : MonoBehaviour {
             if(l.sceneName == sceneToLoad)
             {
                 //reset the loading screen image
-                defaultLoadingScreenImage.color = Color.black;
+                defaultLoadingScreenImage.color = Color.white;
                 defaultLoadingScreenImage.sprite = l.loadingImage;
 
                 //exit the init code
@@ -139,7 +139,7 @@ public class LoadingScreen : MonoBehaviour {
         //enable loading screen transitions
         if (showImageTransition)
         {
-            defaultLoadingScreenImage.color = Color.black;
+            defaultLoadingScreenImage.color = Color.white;
             //now invoking transitions
             InvokeRepeating("StartImageTransition", 0f, transitionDuration);
 
@@ -150,7 +150,7 @@ public class LoadingScreen : MonoBehaviour {
             //if any image is added
             if(LoadingScreenImages.Length > 0)
             {
-                defaultLoadingScreenImage.color = Color.black;
+                defaultLoadingScreenImage.color = Color.white;
                 defaultLoadingScreenImage.sprite = LoadingScreenImages[Random.Range(0, LoadingScreenImages.Length)];
             }
         }
@@ -179,7 +179,7 @@ public class LoadingScreen : MonoBehaviour {
 
     private void Update()
     {
-        if(Input.GetKeyDown("space"))
+        if(Input.GetButtonDown("StartGame"))
                 loadScene();
     }
 
@@ -195,7 +195,7 @@ public class LoadingScreen : MonoBehaviour {
         //if it's null
         if (sceneToLoad == "")
         {
-            sceneToLoad = "TestScene";
+            sceneToLoad = "MainScene";
         }
 
 #else
