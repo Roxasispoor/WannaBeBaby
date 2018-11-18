@@ -23,7 +23,7 @@ public class GatlingAttack : Attack {
         if (Time.fixedTime-lastTimeShoot>firerate)
         {
             Vector3 rotation = new Vector3(0, 0, 1);
-            GameObject newObj=  Instantiate(prefabBullet, this.transform.position, 
+            GameObject newObj=  Instantiate(prefabBullet, character.target.transform.position, 
                 Quaternion.FromToRotation(Vector3.up, new Vector3(character.AimDirection.x, character.AimDirection.y)));
             //GetComponent<Rigidbody2D>().rotation = Mathf.Atan(character.AimDirection.y / character.AimDirection.y);
 
