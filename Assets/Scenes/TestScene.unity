@@ -171,6 +171,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1609202068463172, guid: fb93f20fa5f41fe4db38a9638125ecb7,
         type: 2}
+    - target: {fileID: 114531526891070288, guid: efe0245de11abd04e893b55fc6c39549,
+        type: 2}
+      propertyPath: hurtBox
+      value: 
+      objectReference: {fileID: 1075002278}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
   m_IsPrefabAsset: 0
@@ -357,20 +362,6 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 544799588}
-    - target: {fileID: 212227976141193602, guid: efe0245de11abd04e893b55fc6c39549,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 4d697b278a5ca9247ba8d0ea87ce6ea8,
-        type: 3}
-    - target: {fileID: 4556667516215504, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4556667516215504, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe0245de11abd04e893b55fc6c39549, type: 2}
   m_IsPrefabAsset: 0
@@ -438,6 +429,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1075002278 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 70007749740301338, guid: efe0245de11abd04e893b55fc6c39549,
+    type: 2}
+  m_PrefabInternal: {fileID: 255898486}
 --- !u!1 &1132620088
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +521,7 @@ GameObject:
   - component: {fileID: 2041710120}
   - component: {fileID: 2041710119}
   - component: {fileID: 2041710121}
+  - component: {fileID: 2041710122}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -652,3 +649,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2041710122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2041710118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d8ca21402171a428a269f0e166a367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters: []
+  players: []
+  Canva: {fileID: 0}
+  UIBatchs: []
+  characterPrefab: {fileID: 0}
+  timer: {fileID: 0}

@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour {
                 Character character = Instantiate(characterPrefab, new Vector3(-2 + i, 0, 0), Quaternion.identity).GetComponent<Character>();
                 characters.Add(character);
                 character.player = players[i];
+                character.gameObject.tag = "Player" + players[i].ID;
                 UIBatchs[i].gameObject.SetActive(true);
                 UIBatchs[i].GetComponent<UIManager>().character = character;
             }

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4750434834120592}
   - component: {fileID: 212682239414501618}
-  - component: {fileID: 70290436692533530}
+  - component: {fileID: 70007749740301338}
   - component: {fileID: 114666877912723858}
   - component: {fileID: 114429396759820730}
   - component: {fileID: 114692917317072286}
@@ -35,6 +35,8 @@ GameObject:
   - component: {fileID: 82285963200965808}
   - component: {fileID: 95783463626115892}
   - component: {fileID: 50839127806647972}
+  - component: {fileID: 70165749339645918}
+  - component: {fileID: 70102844285541384}
   m_Layer: 9
   m_Name: Dummy_Character
   m_TagString: Player1
@@ -66,7 +68,7 @@ Transform:
   m_GameObject: {fileID: 1951318572836538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 4750434834120592}
   m_RootOrder: 0
@@ -92,7 +94,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1437441907089566}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
@@ -104,8 +106,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!70 &70290436692533530
+  m_Constraints: 4
+--- !u!70 &70007749740301338
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,12 +116,42 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.27, y: 0.7}
   m_Direction: 0
+--- !u!70 &70102844285541384
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437441907089566}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.6, y: 0.41}
+  m_Direction: 1
+--- !u!70 &70165749339645918
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437441907089566}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.6, y: 0.41}
+  m_Direction: 1
 --- !u!82 &82285963200965808
 AudioSource:
   m_ObjectHideFlags: 1
@@ -288,7 +320,7 @@ MonoBehaviour:
   skills:
   - {fileID: 114862317423376016}
   animatorController: {fileID: 9100000, guid: 53dd14e4d3e1f554091d8537594ce35e, type: 2}
-  hurtBox: {fileID: 70290436692533530}
+  hurtBox: {fileID: 70007749740301338}
   moveSpeed: 9
 --- !u!114 &114429396759820730
 MonoBehaviour:
@@ -324,7 +356,7 @@ MonoBehaviour:
   label: Lich
   skills: []
   animatorController: {fileID: 0}
-  hurtBox: {fileID: 70290436692533530}
+  hurtBox: {fileID: 0}
   moveSpeed: 7
 --- !u!114 &114531526891070288
 MonoBehaviour:
@@ -341,7 +373,7 @@ MonoBehaviour:
   skills:
   - {fileID: 114692917317072286}
   animatorController: {fileID: 9100000, guid: 46fa7c0a7a1d0b54abfb9eea121e45b0, type: 2}
-  hurtBox: {fileID: 70290436692533530}
+  hurtBox: {fileID: 70007749740301338}
   moveSpeed: 10
 --- !u!114 &114666877912723858
 MonoBehaviour:
@@ -369,6 +401,7 @@ MonoBehaviour:
   timeEndSlow: 0
   speed: 10
   isInvincible: 0
+  colliders: []
   blinkingTime: 0.5
   EffectToMorph: {fileID: 1736329956517870, guid: 41df707d678b4074a876b5202d93be66,
     type: 2}
@@ -408,7 +441,7 @@ MonoBehaviour:
   skills:
   - {fileID: 114429396759820730}
   animatorController: {fileID: 9100000, guid: 8c82fa7e7488fb046b3b52e0c2f2999f, type: 2}
-  hurtBox: {fileID: 70290436692533530}
+  hurtBox: {fileID: 70007749740301338}
   moveSpeed: 12
 --- !u!114 &114862317423376016
 MonoBehaviour:
@@ -446,7 +479,7 @@ MonoBehaviour:
   - {fileID: 114052624881771606}
   - {fileID: 114222087844346274}
   animatorController: {fileID: 9100000, guid: e0a307ffac86b6b47b182a75aa728bfa, type: 2}
-  hurtBox: {fileID: 70290436692533530}
+  hurtBox: {fileID: 70102844285541384}
   moveSpeed: 9
 --- !u!212 &212227976141193602
 SpriteRenderer:
@@ -483,7 +516,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 4d697b278a5ca9247ba8d0ea87ce6ea8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -18,7 +18,8 @@ public class Character : MonoBehaviour {
     public float timeEndLock;
     public float timeEndSlow;
     public float speed = 10;
-    public bool isInvincible = false;
+    public bool isInvincible=false;
+    public CapsuleCollider2D[] colliders;
     public float blinkingTime = 0.5f;
     public GameObject EffectToMorph;
     public float morphingTime = 0.5f;
@@ -31,6 +32,12 @@ public class Character : MonoBehaviour {
         target.transform.localRotation = Quaternion.FromToRotation(Vector3.up, new Vector3(AimDirection.x, AimDirection.y));
         target.GetComponent<SpriteRenderer>().material.color = new Color(player.color.r, player.color.g, player.color.b);
         currentForm = forms[2];
+        colliders = gameObject.GetComponents<CapsuleCollider2D>();
+        foreach (CapsuleCollider2D collider in colliders)
+        {
+            collider.enabled = false;
+        }
+        currentForm.HurtBox.enabled = true;
     }
 
     public int Age
@@ -178,8 +185,7 @@ public class Character : MonoBehaviour {
 
     public void ChangeForm(int id)
     {
-        currentForm.HurtBox.gameObject.SetActive(false);
-
+        currentForm.HurtBox.enabled = false;
         //launch animator for change of sprite
         CurrentForm = Forms[id];
         GameObject newItem=Instantiate(EffectToMorph, transform);
