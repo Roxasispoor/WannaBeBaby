@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour {
 
     private void Update()
     {
-        if (timer.IsFinished)
+        if (timer != null && timer.IsFinished)
         {
             Player Save = players[0];
             int saveAge = 90;
