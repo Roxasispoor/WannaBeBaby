@@ -19,14 +19,25 @@ public class Character : MonoBehaviour {
     public float timeEndSlow;
     public float speed = 10;
     public bool isInvincible=false;
-
+    public CapsuleCollider2D[] colliders;
+    public float blinkingTime = 0.5f;
+    public GameObject EffectToMorph;
+    public float morphingTime = 0.5f;
     // Use this for initialization
     void Start()
     {
         aimDirection = new Vector2(1, 0);
-        target.transform.localPosition = aimDirection/1.5f;
+        target.transform.localPosition = aimDirection / 1.8f;
+        
+        target.transform.localRotation = Quaternion.FromToRotation(Vector3.up, new Vector3(AimDirection.x, AimDirection.y));
         target.GetComponent<SpriteRenderer>().material.color = new Color(player.color.r, player.color.g, player.color.b);
         currentForm = forms[2];
+        colliders = gameObject.GetComponents<CapsuleCollider2D>();
+        foreach (CapsuleCollider2D collider in colliders)
+        {
+            collider.enabled = false;
+        }
+        currentForm.HurtBox.enabled = true;
     }
 
     public int Age
@@ -83,40 +94,40 @@ public class Character : MonoBehaviour {
 
     void Update()
     {
-        if(Time.fixedTime>timeEndLock)
+        if (Time.fixedTime > timeEndLock)
         {
             isLocked = false;
         }
-        if(!isLocked)
-        { 
-        Movement();
-        UpdateAim();
-
-        if (player.input.bumpRight)
+        if (!isLocked)
         {
-            currentForm.UseSkill(0, this);
-        }
-        if (player.input.bumpLeft)
-         {
-            currentForm.UseSkill(1, this);
-         }
+            Movement();
+            UpdateAim();
+
+            if (player.input.bumpRight)
+            {
+                currentForm.UseSkill(0, this);
+            }
+            if (player.input.bumpLeft)
+            {
+                currentForm.UseSkill(1, this);
+            }
 
             //Debug
             if (Input.GetKeyDown("a"))
-        {
-            TakeDamage(-5);
-            Debug.Log(currentForm.label);
-        }
-        if (Input.GetKeyDown("z"))
-        {
-            currentForm.UseSkill(0, this);
-        }
+            {
+                TakeDamage(-5);
+                Debug.Log(currentForm.label);
+            }
+            if (Input.GetKeyDown("z"))
+            {
+                currentForm.UseSkill(0, this);
+            }
         }
     }
     // Update is called once per frame
-    void LateUpdate () {
+    void LateUpdate() {
 
-	    /*
+        /*
          * Assign AimDirection
          * Check use of skill from inputs
          * move based on joystick and speedMove
@@ -124,15 +135,28 @@ public class Character : MonoBehaviour {
          *
          */
 
-	}
+    }
 
     public void TakeDamage(int damage)
     {
-        if(!isInvincible)
-        { 
-        age += damage;
-        CheckAndChangeForm();
+        if (!isInvincible)
+        {
+            
+            age += damage;
+            CheckAndChangeForm();
+            if(damage>0)
+            {
+                GetComponent<SpriteRenderer>().color = Color.red;
+
+                StartCoroutine(ReturnToWhite());
+
+            }
         }
+    }
+    public IEnumerator ReturnToWhite()
+        {
+        yield return new WaitForSeconds(blinkingTime);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
     public void CheckAndChangeForm()
     {
@@ -161,12 +185,23 @@ public class Character : MonoBehaviour {
 
     public void ChangeForm(int id)
     {
-        currentForm.HurtBox.gameObject.SetActive(false);
-
+        currentForm.HurtBox.enabled = false;
         //launch animator for change of sprite
         CurrentForm = Forms[id];
+        GameObject newItem=Instantiate(EffectToMorph, transform);
         GetComponent<Animator>().runtimeAnimatorController = Forms[id].animatorController;
         currentForm.HurtBox.gameObject.SetActive(true);
+        isLocked = true;
+        timeEndLock = Time.fixedTime + morphingTime;
+        isInvincible = true;
+        StartCoroutine(DeleteMorphing(newItem));
+    }
+    public IEnumerator DeleteMorphing(GameObject newitem)
+    {
+        yield return new WaitForSeconds(morphingTime);
+        Destroy(newitem);
+        
+        isInvincible = false;
     }
 
     public void Movement()
@@ -190,6 +225,7 @@ public class Character : MonoBehaviour {
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
+        GetComponent<Animator>().SetFloat("Speed", GetComponent<Rigidbody2D>().velocity.magnitude);
     }
     public void Unlock()
     {
@@ -202,6 +238,7 @@ public class Character : MonoBehaviour {
         if (aim.magnitude < 0.5)
             return;
         aimDirection = aim.normalized;
-        target.transform.localPosition = aimDirection/1.5f;
+        target.transform.localPosition = aimDirection/1.8f;
+        target.transform.localRotation = Quaternion.FromToRotation(Vector3.up, new Vector3(AimDirection.x, AimDirection.y));
     }
 }

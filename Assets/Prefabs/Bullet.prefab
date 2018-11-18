@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5478dca37355d45abf2aadc50f31f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 8
   surviveTime: 3
   startTime: 0
   character: {fileID: 0}
