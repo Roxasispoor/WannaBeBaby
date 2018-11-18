@@ -18,13 +18,14 @@ public class Character : MonoBehaviour {
     public float timeEndLock;
     public float timeEndSlow;
     public float speed = 10;
-    public bool isInvincible=false;
+    public bool isInvincible = false;
+    public float blinkingTime = 0.5f;
 
     // Use this for initialization
     void Start()
     {
         aimDirection = new Vector2(1, 0);
-        target.transform.localPosition = aimDirection/1.5f;
+        target.transform.localPosition = aimDirection / 1.5f;
         target.GetComponent<SpriteRenderer>().material.color = new Color(player.color.r, player.color.g, player.color.b);
         currentForm = forms[2];
     }
@@ -83,40 +84,40 @@ public class Character : MonoBehaviour {
 
     void Update()
     {
-        if(Time.fixedTime>timeEndLock)
+        if (Time.fixedTime > timeEndLock)
         {
             isLocked = false;
         }
-        if(!isLocked)
-        { 
-        Movement();
-        UpdateAim();
-
-        if (player.input.bumpRight)
+        if (!isLocked)
         {
-            currentForm.UseSkill(0, this);
-        }
-        if (player.input.bumpLeft)
-         {
-            currentForm.UseSkill(1, this);
-         }
+            Movement();
+            UpdateAim();
+
+            if (player.input.bumpRight)
+            {
+                currentForm.UseSkill(0, this);
+            }
+            if (player.input.bumpLeft)
+            {
+                currentForm.UseSkill(1, this);
+            }
 
             //Debug
             if (Input.GetKeyDown("a"))
-        {
-            TakeDamage(-5);
-            Debug.Log(currentForm.label);
-        }
-        if (Input.GetKeyDown("z"))
-        {
-            currentForm.UseSkill(0, this);
-        }
+            {
+                TakeDamage(-5);
+                Debug.Log(currentForm.label);
+            }
+            if (Input.GetKeyDown("z"))
+            {
+                currentForm.UseSkill(0, this);
+            }
         }
     }
     // Update is called once per frame
-    void LateUpdate () {
+    void LateUpdate() {
 
-	    /*
+        /*
          * Assign AimDirection
          * Check use of skill from inputs
          * move based on joystick and speedMove
@@ -124,15 +125,28 @@ public class Character : MonoBehaviour {
          *
          */
 
-	}
+    }
 
     public void TakeDamage(int damage)
     {
-        if(!isInvincible)
-        { 
-        age += damage;
-        CheckAndChangeForm();
+        if (!isInvincible)
+        {
+            
+            age += damage;
+            CheckAndChangeForm();
+            if(damage>0)
+            {
+                GetComponent<SpriteRenderer>().color = Color.red;
+
+                StartCoroutine(ReturnToWhite());
+
+            }
         }
+    }
+    public IEnumerator ReturnToWhite()
+        {
+        yield return new WaitForSeconds(blinkingTime);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
     public void CheckAndChangeForm()
     {
