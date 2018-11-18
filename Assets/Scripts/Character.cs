@@ -5,8 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour {
 
     public Player player;
-    [SerializeField]
-    private GameObject target;
+    public GameObject target;
     [SerializeField]
     private int age;
     public bool isLocked = false;
@@ -192,6 +191,7 @@ public class Character : MonoBehaviour {
         GetComponent<Animator>().runtimeAnimatorController = Forms[id].animatorController;
         currentForm.HurtBox.enabled = true;
         isLocked = true;
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         timeEndLock = Time.fixedTime + morphingTime;
         isInvincible = true;
         StartCoroutine(DeleteMorphing(newItem));
