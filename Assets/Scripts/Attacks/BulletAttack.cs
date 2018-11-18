@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletAttack : Attack {
-
+    private void Start()
+    {
+        Init();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
@@ -24,5 +27,9 @@ public class BulletAttack : Attack {
                 Destroy(gameObject);
             }
         }
+    }
+    private void Update()
+    {
+        TimeToLive();
     }
 }

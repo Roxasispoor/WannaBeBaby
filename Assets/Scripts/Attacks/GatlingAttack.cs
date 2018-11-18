@@ -19,12 +19,13 @@ public class GatlingAttack : Attack {
 	// Update is called once per frame
 	void Update ()
     {
-        if(Time.fixedTime-lastTimeShoot<firerate)
+        TimeToLive();
+        if (Time.fixedTime-lastTimeShoot>firerate)
         {
-            GameObject newObj=  Instantiate(prefabBullet, transform.position, Quaternion.identity);
-            newObj.GetComponent<Rigidbody2D>().velocity= character.transform.forward * maxSpeed;
+            GameObject newObj=  Instantiate(prefabBullet, transform.position,Quaternion.Euler(0,0,90));
+            newObj.GetComponent<Rigidbody2D>().velocity= character.AimDirection * maxSpeed;
             lastTimeShoot = Time.fixedTime;
-            newObj.GetComponent<Attack>().character = gameObject.GetComponent<Character>();
+            newObj.GetComponent<Attack>().character = character;
           
         }
 
