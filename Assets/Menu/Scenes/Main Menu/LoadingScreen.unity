@@ -1183,6 +1183,8 @@ MonoBehaviour:
   showRandomImageTransition: 1
   LoadingScreenImages:
   - {fileID: 21300000, guid: 57c3f0b76c9178b4382a09a9246e5ed6, type: 3}
+  - {fileID: 21300000, guid: e127f4a2e223abd428125d2acf7bf2cf, type: 3}
+  - {fileID: 21300000, guid: bb20e0ef502812340a896f547d7eec23, type: 3}
   transitionDuration: 3
   transitionFader: {fileID: 538715408}
   showContinueText: 1
